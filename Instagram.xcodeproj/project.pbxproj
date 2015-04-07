@@ -34,6 +34,9 @@
 		3E47B6BF1AD37D290056D308 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6BE1AD37D290056D308 /* ProfileViewController.m */; };
 		3E47B6C21AD381B00056D308 /* DetailPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6C11AD381B00056D308 /* DetailPictureViewController.m */; };
 		3E47B6C51AD382490056D308 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6C41AD382490056D308 /* EditProfileViewController.m */; };
+		F2356B891AD3C5C7003E6684 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F2356B881AD3C5C7003E6684 /* User.m */; };
+		F2356B8C1AD3C5F7003E6684 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = F2356B8B1AD3C5F7003E6684 /* Image.m */; };
+		F2356B8F1AD3C624003E6684 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = F2356B8E1AD3C624003E6684 /* Comment.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,12 @@
 		3E47B6C11AD381B00056D308 /* DetailPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPictureViewController.m; sourceTree = "<group>"; };
 		3E47B6C31AD382490056D308 /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
 		3E47B6C41AD382490056D308 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
+		F2356B871AD3C5C7003E6684 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		F2356B881AD3C5C7003E6684 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		F2356B8A1AD3C5F7003E6684 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		F2356B8B1AD3C5F7003E6684 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		F2356B8D1AD3C624003E6684 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		F2356B8E1AD3C624003E6684 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +131,7 @@
 		3E47B6641AD35A450056D308 = {
 			isa = PBXGroup;
 			children = (
+				F2356B861AD3C5A2003E6684 /* Data Model */,
 				3E47B69D1AD35C090056D308 /* Frameworks */,
 				3E47B66F1AD35A450056D308 /* Instagram */,
 				3E47B68C1AD35A450056D308 /* InstagramTests */,
@@ -211,6 +221,19 @@
 			);
 			name = Frameworks;
 			path = Instagram;
+			sourceTree = "<group>";
+		};
+		F2356B861AD3C5A2003E6684 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2356B871AD3C5C7003E6684 /* User.h */,
+				F2356B881AD3C5C7003E6684 /* User.m */,
+				F2356B8A1AD3C5F7003E6684 /* Image.h */,
+				F2356B8B1AD3C5F7003E6684 /* Image.m */,
+				F2356B8D1AD3C624003E6684 /* Comment.h */,
+				F2356B8E1AD3C624003E6684 /* Comment.m */,
+			);
+			name = "Data Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,8 +342,11 @@
 				3E47B6B61AD367B80056D308 /* SignUpViewController.m in Sources */,
 				3E47B6BF1AD37D290056D308 /* ProfileViewController.m in Sources */,
 				3E47B6791AD35A450056D308 /* Instagram.xcdatamodeld in Sources */,
+				F2356B891AD3C5C7003E6684 /* User.m in Sources */,
 				3E47B67C1AD35A450056D308 /* SignInViewController.m in Sources */,
+				F2356B8F1AD3C624003E6684 /* Comment.m in Sources */,
 				3E47B6BC1AD373CE0056D308 /* MainPageViewController.m in Sources */,
+				F2356B8C1AD3C5F7003E6684 /* Image.m in Sources */,
 				3E47B6B91AD367F00056D308 /* FollowRecViewController.m in Sources */,
 				3E47B6731AD35A450056D308 /* main.m in Sources */,
 			);
@@ -523,6 +549,7 @@
 				3E47B6951AD35A450056D308 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3E47B6961AD35A450056D308 /* Build configuration list for PBXNativeTarget "InstagramTests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +558,7 @@
 				3E47B6981AD35A450056D308 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

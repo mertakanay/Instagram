@@ -34,7 +34,7 @@
                                     <constraint firstAttribute="height" constant="30" id="j93-Au-Oz3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UeY-qo-aT0">
                                 <rect key="frame" x="184" y="437" width="48" height="30"/>
@@ -46,8 +46,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onSignInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="clD-G4-bvF"/>
-                                    <segue destination="IRp-4V-5CM" kind="show" identifier="toMainScreen" id="wBp-UK-mPr"/>
+                                    <action selector="onSignInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rYz-1o-DZ4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eX7-5w-NfZ">
@@ -60,8 +59,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onSignUpButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Se8-ez-wzD"/>
-                                    <segue destination="Gew-8e-fZV" kind="show" identifier="toRegisterScene" id="aEM-dn-VC0"/>
+                                    <action selector="signUpButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GjH-JQ-jX1"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgc-Oj-2q5">
@@ -94,6 +92,8 @@
                     <connections>
                         <outlet property="passwordTextField" destination="qS5-RI-wIg" id="GGV-7l-QR4"/>
                         <outlet property="usernameTextField" destination="Nk8-Oh-NcU" id="wRw-QJ-Qbb"/>
+                        <segue destination="Gew-8e-fZV" kind="show" identifier="toRegisterScene" id="lJP-Ii-Jub"/>
+                        <segue destination="1o3-NX-0BZ" kind="show" identifier="toMainScreen" id="CeC-Ru-Odh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -128,7 +128,7 @@
                                     <constraint firstAttribute="height" constant="30" id="a8d-wl-Vp6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wcx-tn-Ax5">
                                 <rect key="frame" x="94" y="224" width="226" height="30"/>
@@ -137,7 +137,7 @@
                                     <constraint firstAttribute="width" constant="226" id="KiL-mJ-S8z"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e-mail address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YMC-kW-JFp">
                                 <rect key="frame" x="94" y="334" width="226" height="30"/>
@@ -159,7 +159,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onRegisterButtonPressed:" destination="Gew-8e-fZV" eventType="touchUpInside" id="55x-I6-oKR"/>
-                                    <segue destination="Oe1-YF-QvZ" kind="show" identifier="toSelectFirstTimeFollowers" id="cqX-Mz-Jgb"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="full name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="peD-yY-3Mu">
@@ -196,6 +195,7 @@
                         <outlet property="fullNameTextField" destination="peD-yY-3Mu" id="gWP-hc-OZ7"/>
                         <outlet property="passwordTextField" destination="Z9E-dx-0aM" id="IWL-Y9-dZh"/>
                         <outlet property="usernameTextField" destination="hzd-Ik-JS2" id="Kw1-Oy-BLp"/>
+                        <segue destination="Oe1-YF-QvZ" kind="show" identifier="toSelectFirstTimeFollowers" id="I7l-zd-v5g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jvo-xX-Try" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -878,7 +878,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wBp-UK-mPr"/>
+        <segue reference="CeC-Ru-Odh"/>
         <segue reference="zme-qO-LLY"/>
     </inferredMetricsTieBreakers>
 </document>

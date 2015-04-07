@@ -11,5 +11,7 @@
 @interface SignInViewController : UIViewController
 
 
+-(void)displayAlert:(NSString *)error;
+
 @end
 
