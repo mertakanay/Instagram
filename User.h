@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface User : NSObject
+
+@property NSString *username;
+@property NSMutableArray *followingArray;
+@property UIImage *profileImage;
+@property NSString *fullName;
+@property NSString *email;
 
 @end

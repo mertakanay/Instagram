@@ -37,6 +37,7 @@
 		F2356B891AD3C5C7003E6684 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F2356B881AD3C5C7003E6684 /* User.m */; };
 		F2356B8C1AD3C5F7003E6684 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = F2356B8B1AD3C5F7003E6684 /* Image.m */; };
 		F2356B8F1AD3C624003E6684 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = F2356B8E1AD3C624003E6684 /* Comment.m */; };
+		F2356B911AD4434E003E6684 /* defaultimage.png in Resources */ = {isa = PBXBuildFile; fileRef = F2356B901AD4434E003E6684 /* defaultimage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		F2356B8B1AD3C5F7003E6684 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		F2356B8D1AD3C624003E6684 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
 		F2356B8E1AD3C624003E6684 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		F2356B901AD4434E003E6684 /* defaultimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultimage.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				3E47B6C41AD382490056D308 /* EditProfileViewController.m */,
 				3E47B67D1AD35A450056D308 /* Main.storyboard */,
 				3E47B6801AD35A450056D308 /* Images.xcassets */,
+				F2356B901AD4434E003E6684 /* defaultimage.png */,
 				3E47B6821AD35A450056D308 /* LaunchScreen.xib */,
 				3E47B6771AD35A450056D308 /* Instagram.xcdatamodeld */,
 				3E47B6701AD35A450056D308 /* Supporting Files */,
@@ -319,6 +322,7 @@
 				3E47B67F1AD35A450056D308 /* Main.storyboard in Resources */,
 				3E47B6841AD35A450056D308 /* LaunchScreen.xib in Resources */,
 				3E47B6811AD35A450056D308 /* Images.xcassets in Resources */,
+				F2356B911AD4434E003E6684 /* defaultimage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
