@@ -10,7 +10,7 @@
 		3E47B6731AD35A450056D308 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6721AD35A450056D308 /* main.m */; };
 		3E47B6761AD35A450056D308 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6751AD35A450056D308 /* AppDelegate.m */; };
 		3E47B6791AD35A450056D308 /* Instagram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6771AD35A450056D308 /* Instagram.xcdatamodeld */; };
-		3E47B67C1AD35A450056D308 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B67B1AD35A450056D308 /* ViewController.m */; };
+		3E47B67C1AD35A450056D308 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B67B1AD35A450056D308 /* SignInViewController.m */; };
 		3E47B67F1AD35A450056D308 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E47B67D1AD35A450056D308 /* Main.storyboard */; };
 		3E47B6811AD35A450056D308 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E47B6801AD35A450056D308 /* Images.xcassets */; };
 		3E47B6841AD35A450056D308 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E47B6821AD35A450056D308 /* LaunchScreen.xib */; };
@@ -28,6 +28,8 @@
 		3E47B6AF1AD35CC80056D308 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E47B6AE1AD35CC80056D308 /* SystemConfiguration.framework */; };
 		3E47B6B11AD35CDF0056D308 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E47B6B01AD35CDF0056D308 /* libz.dylib */; };
 		3E47B6B31AD35CEB0056D308 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E47B6B21AD35CEB0056D308 /* libsqlite3.dylib */; };
+		3E47B6B61AD367B80056D308 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6B51AD367B80056D308 /* SignUpViewController.m */; };
+		3E47B6B91AD367F00056D308 /* FollowRecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6B81AD367F00056D308 /* FollowRecViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +49,8 @@
 		3E47B6741AD35A450056D308 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3E47B6751AD35A450056D308 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3E47B6781AD35A450056D308 /* Instagram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Instagram.xcdatamodel; sourceTree = "<group>"; };
-		3E47B67A1AD35A450056D308 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3E47B67B1AD35A450056D308 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3E47B67A1AD35A450056D308 /* SignInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		3E47B67B1AD35A450056D308 /* SignInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		3E47B67E1AD35A450056D308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3E47B6801AD35A450056D308 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3E47B6831AD35A450056D308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -68,6 +70,10 @@
 		3E47B6AE1AD35CC80056D308 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3E47B6B01AD35CDF0056D308 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		3E47B6B21AD35CEB0056D308 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		3E47B6B41AD367B80056D308 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		3E47B6B51AD367B80056D308 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		3E47B6B71AD367F00056D308 /* FollowRecViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowRecViewController.h; sourceTree = "<group>"; };
+		3E47B6B81AD367F00056D308 /* FollowRecViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowRecViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +131,12 @@
 			children = (
 				3E47B6741AD35A450056D308 /* AppDelegate.h */,
 				3E47B6751AD35A450056D308 /* AppDelegate.m */,
-				3E47B67A1AD35A450056D308 /* ViewController.h */,
-				3E47B67B1AD35A450056D308 /* ViewController.m */,
+				3E47B67A1AD35A450056D308 /* SignInViewController.h */,
+				3E47B67B1AD35A450056D308 /* SignInViewController.m */,
+				3E47B6B41AD367B80056D308 /* SignUpViewController.h */,
+				3E47B6B51AD367B80056D308 /* SignUpViewController.m */,
+				3E47B6B71AD367F00056D308 /* FollowRecViewController.h */,
+				3E47B6B81AD367F00056D308 /* FollowRecViewController.m */,
 				3E47B67D1AD35A450056D308 /* Main.storyboard */,
 				3E47B6801AD35A450056D308 /* Images.xcassets */,
 				3E47B6821AD35A450056D308 /* LaunchScreen.xib */,
@@ -284,8 +294,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E47B6761AD35A450056D308 /* AppDelegate.m in Sources */,
+				3E47B6B61AD367B80056D308 /* SignUpViewController.m in Sources */,
 				3E47B6791AD35A450056D308 /* Instagram.xcdatamodeld in Sources */,
-				3E47B67C1AD35A450056D308 /* ViewController.m in Sources */,
+				3E47B67C1AD35A450056D308 /* SignInViewController.m in Sources */,
+				3E47B6B91AD367F00056D308 /* FollowRecViewController.m in Sources */,
 				3E47B6731AD35A450056D308 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
