@@ -30,6 +30,10 @@
 		3E47B6B31AD35CEB0056D308 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E47B6B21AD35CEB0056D308 /* libsqlite3.dylib */; };
 		3E47B6B61AD367B80056D308 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6B51AD367B80056D308 /* SignUpViewController.m */; };
 		3E47B6B91AD367F00056D308 /* FollowRecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6B81AD367F00056D308 /* FollowRecViewController.m */; };
+		3E47B6BC1AD373CE0056D308 /* MainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6BB1AD373CE0056D308 /* MainPageViewController.m */; };
+		3E47B6BF1AD37D290056D308 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6BE1AD37D290056D308 /* ProfileViewController.m */; };
+		3E47B6C21AD381B00056D308 /* DetailPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6C11AD381B00056D308 /* DetailPictureViewController.m */; };
+		3E47B6C51AD382490056D308 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6C41AD382490056D308 /* EditProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +78,14 @@
 		3E47B6B51AD367B80056D308 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		3E47B6B71AD367F00056D308 /* FollowRecViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowRecViewController.h; sourceTree = "<group>"; };
 		3E47B6B81AD367F00056D308 /* FollowRecViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowRecViewController.m; sourceTree = "<group>"; };
+		3E47B6BA1AD373CE0056D308 /* MainPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageViewController.h; sourceTree = "<group>"; };
+		3E47B6BB1AD373CE0056D308 /* MainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageViewController.m; sourceTree = "<group>"; };
+		3E47B6BD1AD37D290056D308 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		3E47B6BE1AD37D290056D308 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		3E47B6C01AD381B00056D308 /* DetailPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPictureViewController.h; sourceTree = "<group>"; };
+		3E47B6C11AD381B00056D308 /* DetailPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPictureViewController.m; sourceTree = "<group>"; };
+		3E47B6C31AD382490056D308 /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
+		3E47B6C41AD382490056D308 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +149,14 @@
 				3E47B6B51AD367B80056D308 /* SignUpViewController.m */,
 				3E47B6B71AD367F00056D308 /* FollowRecViewController.h */,
 				3E47B6B81AD367F00056D308 /* FollowRecViewController.m */,
+				3E47B6BA1AD373CE0056D308 /* MainPageViewController.h */,
+				3E47B6BB1AD373CE0056D308 /* MainPageViewController.m */,
+				3E47B6BD1AD37D290056D308 /* ProfileViewController.h */,
+				3E47B6BE1AD37D290056D308 /* ProfileViewController.m */,
+				3E47B6C01AD381B00056D308 /* DetailPictureViewController.h */,
+				3E47B6C11AD381B00056D308 /* DetailPictureViewController.m */,
+				3E47B6C31AD382490056D308 /* EditProfileViewController.h */,
+				3E47B6C41AD382490056D308 /* EditProfileViewController.m */,
 				3E47B67D1AD35A450056D308 /* Main.storyboard */,
 				3E47B6801AD35A450056D308 /* Images.xcassets */,
 				3E47B6821AD35A450056D308 /* LaunchScreen.xib */,
@@ -293,10 +313,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E47B6C21AD381B00056D308 /* DetailPictureViewController.m in Sources */,
 				3E47B6761AD35A450056D308 /* AppDelegate.m in Sources */,
+				3E47B6C51AD382490056D308 /* EditProfileViewController.m in Sources */,
 				3E47B6B61AD367B80056D308 /* SignUpViewController.m in Sources */,
+				3E47B6BF1AD37D290056D308 /* ProfileViewController.m in Sources */,
 				3E47B6791AD35A450056D308 /* Instagram.xcdatamodeld in Sources */,
 				3E47B67C1AD35A450056D308 /* SignInViewController.m in Sources */,
+				3E47B6BC1AD373CE0056D308 /* MainPageViewController.m in Sources */,
 				3E47B6B91AD367F00056D308 /* FollowRecViewController.m in Sources */,
 				3E47B6731AD35A450056D308 /* main.m in Sources */,
 			);

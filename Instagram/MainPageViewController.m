@@ -1,18 +1,18 @@
 //
-//  FollowRecViewController.m
+//  MainPageViewController.m
 //  Instagram
 //
 //  Created by Mert Akanay on 4/6/15.
 //  Copyright (c) 2015 MobileMakers. All rights reserved.
 //
 
-#import "FollowRecViewController.h"
+#import "MainPageViewController.h"
 
-@interface FollowRecViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface MainPageViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @end
 
-@implementation FollowRecViewController
+@implementation MainPageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
