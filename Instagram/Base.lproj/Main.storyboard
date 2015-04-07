@@ -219,6 +219,7 @@
                         <outlet property="emailTextField" destination="YMC-kW-JFp" id="nr9-UI-Bfn"/>
                         <outlet property="fullNameTextField" destination="peD-yY-3Mu" id="gWP-hc-OZ7"/>
                         <outlet property="passwordTextField" destination="Z9E-dx-0aM" id="IWL-Y9-dZh"/>
+                        <outlet property="profileImageVC" destination="npg-H0-reu" id="l1c-lW-kCv"/>
                         <outlet property="usernameTextField" destination="hzd-Ik-JS2" id="Kw1-Oy-BLp"/>
                         <segue destination="Oe1-YF-QvZ" kind="show" identifier="toSelectFirstTimeFollowers" id="I7l-zd-v5g"/>
                     </connections>

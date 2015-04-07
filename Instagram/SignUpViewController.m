@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *confirmPasswordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *fullNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageVC;
+
 @property User *currentUser;
 
 @end
@@ -81,8 +83,13 @@
         user[@"name"] = self.fullNameTextField.text;
 
 
+        //profile image saving
+       // NSData *imageData = UIImagePNGRepresentation(self.currentUser.profileImage);
+        PFFile *imageFile = self.currentUser.profileImage;
+        user[@"profileImage"] = imageFile;
 
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+
             //if call is succcessful - let the user use the app and take them to next screen.
             if (!error)
             {
@@ -140,7 +147,10 @@
 
     UIImage * img = [info valueForKey:UIImagePickerControllerEditedImage];
 
-    self.currentUser.profileImage = img;
+    NSData *imageData = UIImagePNGRepresentation(img);
+    PFFile *imageFile = [PFFile fileWithData:imageData];
+    self.currentUser.profileImage = imageFile;
+    self.profileImageVC.image = img;
     
 }
 
