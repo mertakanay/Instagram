@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
-@interface Comment : NSObject
+@interface Comment : PFObject<PFSubclassing>
+
+@property NSString *username;
+@property NSString *commentText;
+
++ (NSString *)parseClassName;
 
 @end
