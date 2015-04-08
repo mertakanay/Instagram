@@ -34,6 +34,7 @@
 		3E47B6BF1AD37D290056D308 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6BE1AD37D290056D308 /* ProfileViewController.m */; };
 		3E47B6C21AD381B00056D308 /* DetailPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6C11AD381B00056D308 /* DetailPictureViewController.m */; };
 		3E47B6C51AD382490056D308 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6C41AD382490056D308 /* EditProfileViewController.m */; };
+		F218B9A01AD507CC0000E679 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F218B99F1AD507CC0000E679 /* CustomTableViewCell.m */; };
 		F2356B891AD3C5C7003E6684 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F2356B881AD3C5C7003E6684 /* User.m */; };
 		F2356B8C1AD3C5F7003E6684 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = F2356B8B1AD3C5F7003E6684 /* Image.m */; };
 		F2356B8F1AD3C624003E6684 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = F2356B8E1AD3C624003E6684 /* Comment.m */; };
@@ -90,6 +91,8 @@
 		3E47B6C11AD381B00056D308 /* DetailPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPictureViewController.m; sourceTree = "<group>"; };
 		3E47B6C31AD382490056D308 /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
 		3E47B6C41AD382490056D308 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
+		F218B99E1AD507CC0000E679 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		F218B99F1AD507CC0000E679 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		F2356B871AD3C5C7003E6684 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		F2356B881AD3C5C7003E6684 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		F2356B8A1AD3C5F7003E6684 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -169,6 +172,8 @@
 				3E47B6C11AD381B00056D308 /* DetailPictureViewController.m */,
 				3E47B6C31AD382490056D308 /* EditProfileViewController.h */,
 				3E47B6C41AD382490056D308 /* EditProfileViewController.m */,
+				F218B99E1AD507CC0000E679 /* CustomTableViewCell.h */,
+				F218B99F1AD507CC0000E679 /* CustomTableViewCell.m */,
 				3E47B67D1AD35A450056D308 /* Main.storyboard */,
 				3E47B6801AD35A450056D308 /* Images.xcassets */,
 				F2356B901AD4434E003E6684 /* defaultimage.png */,
@@ -348,6 +353,7 @@
 				3E47B6791AD35A450056D308 /* Instagram.xcdatamodeld in Sources */,
 				F2356B891AD3C5C7003E6684 /* User.m in Sources */,
 				3E47B67C1AD35A450056D308 /* SignInViewController.m in Sources */,
+				F218B9A01AD507CC0000E679 /* CustomTableViewCell.m in Sources */,
 				F2356B8F1AD3C624003E6684 /* Comment.m in Sources */,
 				3E47B6BC1AD373CE0056D308 /* MainPageViewController.m in Sources */,
 				F2356B8C1AD3C5F7003E6684 /* Image.m in Sources */,

@@ -15,17 +15,46 @@
 @dynamic imageFile;
 @dynamic commentsArray;
 @dynamic likersArray;
+@dynamic owner;
 
--(instancetype)initWithClassName:(NSString *)newClassName{
+@synthesize likers = _likers;
+@synthesize comments = _comments;
 
-    return self;
-}
+
+
 
 + (void)load {
     [self registerSubclass];
 }
+
 + (NSString *)parseClassName{
     return @"Image";
+}
+
+-(void)setLikers:(PFRelation *)likers
+{
+    _likers = likers;
+}
+
+-(PFRelation *)likers
+{
+    if (!_likers) {
+        _likers = [self relationForKey:@"likers"];
+    }
+    return _likers;
+}
+
+-(void)setComments:(PFRelation *)comments
+{
+    _comments = comments;
+}
+
+-(PFRelation *)comments
+{
+    if (!_comments) {
+        _comments = [self relationForKey:@"comments"];
+    }
+    return _comments;
 }
 
 @end

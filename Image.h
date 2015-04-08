@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import "User.h"
 
 @interface Image : PFObject<PFSubclassing>
 
@@ -16,6 +17,10 @@
 @property PFFile *imageFile;
 @property NSMutableArray *commentsArray;
 @property NSMutableArray *likersArray;
+
+@property (nonatomic) User *owner;
+@property (nonatomic) PFRelation *likers;
+@property (nonatomic) PFRelation *comments;
 
 + (NSString *)parseClassName;
 
