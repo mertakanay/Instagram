@@ -10,15 +10,20 @@
 #import <Parse/Parse.h>
 #import <UIKit/UIKit.h>
 
-@interface User : PFObject<PFSubclassing>
+@interface User : PFUser<PFSubclassing>
 
-@property NSString *username;
-@property NSString *password;
+@property (nonatomic)  NSString *username;
+@property (nonatomic) NSString *password;
 @property NSMutableArray *followingArray;
 @property PFFile *profileImage;
 @property NSString *fullName;
-@property NSString *email;
+@property (nonatomic) NSString *email;
 
-+ (NSString *)parseClassName;
+@property (nonatomic) PFRelation *photos;
+@property (nonatomic) PFRelation *comments;
+@property (nonatomic) PFRelation *followers;
+@property (nonatomic) PFRelation *followings;
+
+
 
 @end

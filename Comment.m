@@ -12,6 +12,9 @@
 
 @dynamic username;
 @dynamic commentText;
+@dynamic photo;
+@dynamic poster;
+
 
 -(instancetype)initWithClassName:(NSString *)newClassName{
 
@@ -24,5 +27,6 @@
 + (NSString *)parseClassName{
     return @"Comment";
 }
+
 
 @end

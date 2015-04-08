@@ -69,7 +69,7 @@
 
         signUpError = @"Passwords do not match, please try again.";
 
-    }else if ([self.passwordTextField.text length] < 8 || [self.confirmPasswordTextField.text length] < 8){
+    }else if ([self.passwordTextField.text length] < 0 || [self.confirmPasswordTextField.text length] < 0){
 
         signUpError = @"Password must be at least 8 characters long. Please try again.";
 

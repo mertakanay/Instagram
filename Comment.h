@@ -8,11 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import "Image.h"
 
 @interface Comment : PFObject<PFSubclassing>
 
 @property NSString *username;
 @property NSString *commentText;
+
+@property (nonatomic) Image *photo;
+@property (nonatomic) User *poster;
 
 + (NSString *)parseClassName;
 
