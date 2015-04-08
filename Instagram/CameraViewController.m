@@ -9,6 +9,9 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "CameraViewController.h"
+#import "User.h"
+#import "Image.h"
+#import "Comment.h"
 
 
 
@@ -21,6 +24,8 @@
 @property (nonatomic) UIImagePickerController *libraryImagePickerController;
 
 @property (nonatomic) UIImage *albumImage;
+
+@property (nonatomic) Image *pickedPhoto;
 
 
 @end
@@ -112,7 +117,13 @@
    
     [self dismissViewControllerAnimated:YES completion:nil];
     self.imageView.image = info[UIImagePickerControllerOriginalImage];
-//    self.imageView.image = self.albumImage;
+    
+    NSData *imageData = UIImageJPEGRepresentation(self.imageView.image,0.5);
+    PFFile *imageFile = [PFFile fileWithName:@"Picked photo" data:imageData];
+    self.pickedPhoto = [Image object];
+    self.pickedPhoto.imageFile = imageFile;
+    [self.pickedPhoto saveInBackground];
+    
     
 }
 
@@ -128,11 +139,31 @@
     return YES;
 }
 
--(void)textViewDidEndEditing:(UITextView *)textView
+-(BOOL)textViewShouldEndEditing:(UITextView *)textView
 {
-    [textView resignFirstResponder];
+    if (textView.text.length) {
+        
+        Comment *comment = [Comment object];
+        comment.commentText = textView.text;
+        comment.photo = self.pickedPhoto;
+        comment.poster = (User *)[PFUser currentUser];
+        [comment saveInBackground];
+        [comment saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            [self.pickedPhoto.comments addObject:comment];
+            [self.pickedPhoto saveInBackground];
+        }];
+        
+    }
+    return YES;
     
 }
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    
+    [self.commentTextView resignFirstResponder];
+}
+
 
 
 
