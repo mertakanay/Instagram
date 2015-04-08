@@ -98,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1098" y="-324"/>
+            <point key="canvasLocation" x="1084" y="-652"/>
         </scene>
         <!--User Sign Up-->
         <scene sceneID="7mB-FT-rDV">
@@ -226,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jvo-xX-Try" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1690" y="-324"/>
+            <point key="canvasLocation" x="1690" y="-262"/>
         </scene>
         <!--Follow Recommendations-->
         <scene sceneID="Ma1-kF-suy">
@@ -244,19 +244,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" rowHeight="68" id="6Se-MF-iIe">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" rowHeight="68" id="6Se-MF-iIe" customClass="FollowRecCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Se-MF-iIe" id="K7j-WI-kaM">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQJ-pS-Pcf">
-                                                    <rect key="frame" x="351" y="19" width="45" height="30"/>
+                                                    <rect key="frame" x="208" y="19" width="92" height="30"/>
                                                     <state key="normal" title="Follow">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="followButton" destination="EQJ-pS-Pcf" id="S8x-mC-Lb5"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -276,15 +279,18 @@
                     <navigationItem key="navigationItem" title="Follow Recommendations" id="06x-EQ-hj0">
                         <barButtonItem key="rightBarButtonItem" title="Finish" id="Fe2-zi-QTO">
                             <connections>
-                                <segue destination="IRp-4V-5CM" kind="show" identifier="finishSegue" id="Nos-6f-NMB"/>
+                                <segue destination="IRp-4V-5CM" kind="modal" identifier="finishSegue" id="Nos-6f-NMB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="tableView" destination="lTp-Mn-Mos" id="bkc-Yp-lwQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssQ-kZ-VQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2243" y="-324"/>
+            <point key="canvasLocation" x="1683" y="-1344"/>
         </scene>
         <!--Instagram-->
         <scene sceneID="z8b-Jy-1mI">
@@ -750,6 +756,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="W9J-M9-jpB"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="followingsLabel" destination="mgX-9k-Bb0" id="LGb-0P-oT9"/>
+                        <outlet property="fullNameLabel" destination="hEU-I6-QyJ" id="KeX-aH-KHX"/>
+                        <outlet property="profileImageView" destination="OBr-EV-GZo" id="gRm-al-Mic"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqM-Az-Q2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -878,12 +889,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2C-0L-J5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="539" y="-324"/>
+            <point key="canvasLocation" x="519" y="-668"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="ofx-VG-2CT">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="IRp-4V-5CM" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="IRp-4V-5CM" customClass="TabBarViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="wVa-Mm-VwS">

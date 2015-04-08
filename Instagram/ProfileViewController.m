@@ -9,6 +9,9 @@
 #import "ProfileViewController.h"
 
 @interface ProfileViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *followingsLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UILabel *fullNameLabel;
 
 @end
 
@@ -17,5 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+
+    self.followingsLabel.text = [NSString stringWithFormat:@"%lu following",(unsigned long)self.currentUser.followingArray.count];
+    self.fullNameLabel.text = self.currentUser.fullName;
+
+        [self.currentUser.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (!error) {
+                UIImage *image = [UIImage imageWithData:data];
+                self.profileImageView.image = image;
+            }
+        }];
 }
 @end

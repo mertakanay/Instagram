@@ -12,12 +12,12 @@
 
 @interface User : PFObject<PFSubclassing>
 
-@property NSString *username;
-@property NSString *password;
+@property (nonatomic) NSString *username;
+@property (nonatomic) NSString *password;
 @property NSMutableArray *followingArray;
 @property PFFile *profileImage;
 @property NSString *fullName;
-@property NSString *email;
+@property (nonatomic) NSString *email;
 
 + (NSString *)parseClassName;
 
