@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
-@interface Image : NSObject
+@interface Image : PFObject<PFSubclassing>
+
+@property NSString *username;
+@property NSString *imageDescription;
+@property PFFile *imageFile;
+@property NSMutableArray *commentsArray;
+@property NSMutableArray *likersArray;
+
++ (NSString *)parseClassName;
 
 @end

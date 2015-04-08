@@ -10,4 +10,22 @@
 
 @implementation Image
 
+@dynamic username;
+@dynamic imageDescription;
+@dynamic imageFile;
+@dynamic commentsArray;
+@dynamic likersArray;
+
+-(instancetype)initWithClassName:(NSString *)newClassName{
+
+    return self;
+}
+
++ (void)load {
+    [self registerSubclass];
+}
++ (NSString *)parseClassName{
+    return @"Image";
+}
+
 @end

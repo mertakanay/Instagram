@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
+#import <UIKit/UIKit.h>
 
-@interface User : NSObject
+@interface User : PFObject<PFSubclassing>
+
+@property NSString *username;
+@property NSString *password;
+@property NSMutableArray *followingArray;
+@property PFFile *profileImage;
+@property NSString *fullName;
+@property NSString *email;
+
++ (NSString *)parseClassName;
 
 @end
