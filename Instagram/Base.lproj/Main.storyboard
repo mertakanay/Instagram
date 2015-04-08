@@ -98,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1098" y="-324"/>
+            <point key="canvasLocation" x="1084" y="-652"/>
         </scene>
         <!--User Sign Up-->
         <scene sceneID="7mB-FT-rDV">
@@ -226,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jvo-xX-Try" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1690" y="-324"/>
+            <point key="canvasLocation" x="1690" y="-262"/>
         </scene>
         <!--Follow Recommendations-->
         <scene sceneID="Ma1-kF-suy">
@@ -244,19 +244,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" rowHeight="68" id="6Se-MF-iIe">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" rowHeight="68" id="6Se-MF-iIe" customClass="FollowRecCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Se-MF-iIe" id="K7j-WI-kaM">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQJ-pS-Pcf">
-                                                    <rect key="frame" x="351" y="19" width="45" height="30"/>
+                                                    <rect key="frame" x="208" y="19" width="92" height="30"/>
                                                     <state key="normal" title="Follow">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="followButton" destination="EQJ-pS-Pcf" id="S8x-mC-Lb5"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -276,15 +279,18 @@
                     <navigationItem key="navigationItem" title="Follow Recommendations" id="06x-EQ-hj0">
                         <barButtonItem key="rightBarButtonItem" title="Finish" id="Fe2-zi-QTO">
                             <connections>
-                                <segue destination="IRp-4V-5CM" kind="show" identifier="finishSegue" id="Nos-6f-NMB"/>
+                                <segue destination="IRp-4V-5CM" kind="modal" identifier="finishSegue" id="Nos-6f-NMB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="tableView" destination="lTp-Mn-Mos" id="bkc-Yp-lwQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssQ-kZ-VQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2243" y="-324"/>
+            <point key="canvasLocation" x="1683" y="-1344"/>
         </scene>
         <!--Instagram-->
         <scene sceneID="z8b-Jy-1mI">
@@ -624,7 +630,7 @@
         <!--Camera-->
         <scene sceneID="WJS-jT-v5P">
             <objects>
-                <viewController id="Jbh-RR-yy3" sceneMemberID="viewController">
+                <viewController id="Jbh-RR-yy3" customClass="CameraViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Pw-2Z-WgN"/>
                         <viewControllerLayoutGuide type="bottom" id="GM2-fA-fkT"/>
@@ -632,10 +638,49 @@
                     <view key="view" contentMode="scaleToFill" id="Wzg-JQ-B5O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Bp-SQ-ucL">
+                                <rect key="frame" x="0.0" y="64" width="414" height="472"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter comment here" translatesAutoresizingMaskIntoConstraints="NO" id="HWA-dX-E3W">
+                                <rect key="frame" x="16" y="552" width="382" height="71"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="SvT-WX-Njz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6b-M1-eAk">
+                                <rect key="frame" x="26" y="638" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="A2U-Y7-oJA"/>
+                                    <constraint firstAttribute="width" constant="97" id="Hj6-B2-cqg"/>
+                                </constraints>
+                                <state key="normal" title="Add comment">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="0Bp-SQ-ucL" secondAttribute="trailing" constant="-16" id="HJh-Ws-TOs"/>
+                            <constraint firstItem="0Bp-SQ-ucL" firstAttribute="top" secondItem="4Pw-2Z-WgN" secondAttribute="bottom" id="RLy-Oc-yaD"/>
+                            <constraint firstItem="HWA-dX-E3W" firstAttribute="top" secondItem="0Bp-SQ-ucL" secondAttribute="bottom" constant="16" id="Ve8-Jj-RPc"/>
+                            <constraint firstItem="HWA-dX-E3W" firstAttribute="leading" secondItem="Wzg-JQ-B5O" secondAttribute="leadingMargin" id="a7Z-iV-a23"/>
+                            <constraint firstItem="HWA-dX-E3W" firstAttribute="trailing" secondItem="Wzg-JQ-B5O" secondAttribute="trailingMargin" id="cSS-P3-4KY"/>
+                            <constraint firstItem="v6b-M1-eAk" firstAttribute="leading" secondItem="Wzg-JQ-B5O" secondAttribute="leadingMargin" constant="10" id="dib-7L-ZGP"/>
+                            <constraint firstItem="v6b-M1-eAk" firstAttribute="top" secondItem="HWA-dX-E3W" secondAttribute="bottom" constant="15" id="g1y-wf-a5T"/>
+                            <constraint firstItem="0Bp-SQ-ucL" firstAttribute="leading" secondItem="Wzg-JQ-B5O" secondAttribute="leadingMargin" constant="-16" id="rJg-jA-hFb"/>
+                            <constraint firstItem="GM2-fA-fkT" firstAttribute="top" secondItem="v6b-M1-eAk" secondAttribute="bottom" constant="19" id="wYg-9E-Htb"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Camera" id="qiH-By-lSc"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="commentTextView" destination="HWA-dX-E3W" id="dau-e5-vOE"/>
+                        <outlet property="imageView" destination="0Bp-SQ-ucL" id="R4w-J6-As0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DYB-MM-GR0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -763,6 +808,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="W9J-M9-jpB"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="followingsLabel" destination="mgX-9k-Bb0" id="LGb-0P-oT9"/>
+                        <outlet property="fullNameLabel" destination="hEU-I6-QyJ" id="KeX-aH-KHX"/>
+                        <outlet property="profileImageView" destination="OBr-EV-GZo" id="gRm-al-Mic"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqM-Az-Q2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -891,12 +941,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2C-0L-J5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="539" y="-324"/>
+            <point key="canvasLocation" x="519" y="-668"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="ofx-VG-2CT">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="IRp-4V-5CM" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="IRp-4V-5CM" customClass="TabBarViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="wVa-Mm-VwS">
@@ -913,7 +963,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxk-an-zER" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2243" y="-1178"/>
+            <point key="canvasLocation" x="2249" y="-1282"/>
         </scene>
     </scenes>
     <resources>

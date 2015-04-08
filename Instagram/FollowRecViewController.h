@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @interface FollowRecViewController : UIViewController
+
+@property User *currentUser;
 
 @end
