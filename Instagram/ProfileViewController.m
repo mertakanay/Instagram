@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.currentUser = [PFUser currentUser];
 
     self.followingsLabel.text = [NSString stringWithFormat:@"%lu following",(unsigned long)self.currentUser.followingArray.count];
     self.fullNameLabel.text = self.currentUser.fullName;
