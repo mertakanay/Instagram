@@ -101,6 +101,15 @@
 }
 
 
+//unwind from main view controller
+
+- (IBAction)unwindToSignInViewController:(UIStoryboardSegue *)segue {
+    //nothing goes here
+
+    self.usernameTextField.text = @"";
+    self.passwordTextField.text = @"";
+}
+
 
 
 

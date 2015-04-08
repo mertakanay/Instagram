@@ -12,7 +12,7 @@
 
 @interface User : PFUser<PFSubclassing>
 
-@property (nonatomic)  NSString *username;
+@property (nonatomic) NSString *username;
 @property (nonatomic) NSString *password;
 @property NSMutableArray *followingArray;
 @property PFFile *profileImage;

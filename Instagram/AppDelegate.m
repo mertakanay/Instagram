@@ -26,9 +26,9 @@
                   clientKey:@"6ee7RTuOtPF4zEAQjKGKtl6OUPSl4xrhUUY0HSc5"];
     
     PFQuery *query = [Image query];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        <#code#>
-    }];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        <#code#>
+//    }];
     
     return YES;
 }

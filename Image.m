@@ -21,6 +21,8 @@
 @synthesize comments = _comments;
 
 
+
+
 + (void)load {
     [self registerSubclass];
 }

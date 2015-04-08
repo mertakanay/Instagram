@@ -9,6 +9,7 @@
 #import "SignUpViewController.h"
 #import <Parse/Parse.h>
 #import "User.h"
+#import "FollowRecViewController.h"
 
 @interface SignUpViewController ()<UITextFieldDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -69,7 +70,7 @@
 
         signUpError = @"Passwords do not match, please try again.";
 
-    }else if ([self.passwordTextField.text length] < 0 || [self.confirmPasswordTextField.text length] < 0){
+    }else if ([self.passwordTextField.text length] < 1 || [self.confirmPasswordTextField.text length] < 1){
 
         signUpError = @"Password must be at least 8 characters long. Please try again.";
 
@@ -151,6 +152,14 @@
     PFFile *imageFile = [PFFile fileWithData:imageData];
     self.currentUser.profileImage = imageFile;
     self.profileImageVC.image = img;
+    [self.currentUser.profileImage saveInBackground];
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    FollowRecViewController *followRVC = [segue destinationViewController];
+    followRVC.currentUser = self.currentUser;
     
 }
 
