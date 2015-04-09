@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vHQ-aA-Ed7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vHQ-aA-Ed7">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -93,7 +93,7 @@
                         <outlet property="passwordTextField" destination="qS5-RI-wIg" id="GGV-7l-QR4"/>
                         <outlet property="usernameTextField" destination="Nk8-Oh-NcU" id="wRw-QJ-Qbb"/>
                         <segue destination="Gew-8e-fZV" kind="show" identifier="toRegisterScene" id="lJP-Ii-Jub"/>
-                        <segue destination="1o3-NX-0BZ" kind="show" identifier="toMainScreen" id="CeC-Ru-Odh"/>
+                        <segue destination="IRp-4V-5CM" kind="show" id="KcZ-lE-HL1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -290,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssQ-kZ-VQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1683" y="-1344"/>
+            <point key="canvasLocation" x="1544" y="-1391"/>
         </scene>
         <!--Instagram-->
         <scene sceneID="z8b-Jy-1mI">
@@ -488,7 +488,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nLi-eH-EA4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Eb0-bd-fJ0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2856" y="-906"/>
+            <point key="canvasLocation" x="2840" y="-966"/>
         </scene>
         <!--Detail Picture View Controller-->
         <scene sceneID="ff5-Hf-scv">
@@ -502,14 +502,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tue-QF-5kl">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tue-QF-5kl">
                                 <rect key="frame" x="26" y="88" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Eqz-8E-2lp"/>
                                     <constraint firstAttribute="height" constant="50" id="bnP-fQ-aYF"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbA-rv-Ad5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbA-rv-Ad5">
                                 <rect key="frame" x="84" y="102" width="166" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="166" id="14J-qC-yHp"/>
@@ -518,19 +518,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XUd-kV-rpW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XUd-kV-rpW">
                                 <rect key="frame" x="0.0" y="152" width="414" height="377"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="377" id="JR4-3q-NOJ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="like #" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQy-9Y-EOf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="like #" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQy-9Y-EOf">
                                 <rect key="frame" x="11" y="537" width="32" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="likes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNW-RR-edl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="likes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNW-RR-edl">
                                 <rect key="frame" x="51" y="537" width="361" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="361" id="nDR-ax-d8D"/>
@@ -598,7 +598,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UsG-Ck-xPC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4106" y="-537"/>
+            <point key="canvasLocation" x="3450" y="-473"/>
         </scene>
         <!--Search-->
         <scene sceneID="3wK-oZ-6uQ">
@@ -625,7 +625,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vnO-Ep-UzT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3114" y="-80"/>
+            <point key="canvasLocation" x="2822" y="-2726"/>
         </scene>
         <!--Camera-->
         <scene sceneID="WJS-jT-v5P">
@@ -687,7 +687,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DYB-MM-GR0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2960" y="550"/>
+            <point key="canvasLocation" x="2840" y="-1846"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Q1P-Jb-Wc6">
@@ -758,7 +758,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="4rM-Og-GFH" kind="show" id="zpo-I5-qPG"/>
+                                    <segue destination="4rM-Og-GFH" kind="modal" id="zpo-I5-qPG"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zdp-88-H6i">
@@ -819,7 +819,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqM-Az-Q2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3480" y="268"/>
+            <point key="canvasLocation" x="2840" y="-76"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="eec-VX-eD3">
@@ -897,7 +897,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5c-GJ-clZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4106" y="371"/>
+            <point key="canvasLocation" x="3458" y="443"/>
         </scene>
         <!--Actions-->
         <scene sceneID="edV-Oa-dnN">
@@ -925,7 +925,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRc-Yj-Zdd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3480" y="-682"/>
+            <point key="canvasLocation" x="3352" y="-1454"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RWz-HS-xWu">
@@ -966,14 +966,14 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxk-an-zER" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2249" y="-1282"/>
+            <point key="canvasLocation" x="2113" y="-1192"/>
         </scene>
     </scenes>
     <resources>
         <image name="defaultimage" width="1200" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CeC-Ru-Odh"/>
         <segue reference="coX-Sf-ojj"/>
+        <segue reference="Nos-6f-NMB"/>
     </inferredMetricsTieBreakers>
 </document>

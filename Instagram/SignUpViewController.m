@@ -30,8 +30,7 @@
 
     self.view.userInteractionEnabled = YES;
 
-    self.currentUser = [User new];
-    self.currentUser = [PFUser currentUser];
+    self.currentUser = [User object];
 
 }
 

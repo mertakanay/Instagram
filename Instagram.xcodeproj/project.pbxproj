@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3648AB2C1AD4436800CB861B /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3648AB2B1AD4436800CB861B /* CameraViewController.m */; };
 		3E257E751AD4F4E9007E7186 /* FollowRecCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E257E741AD4F4E9007E7186 /* FollowRecCell.m */; };
 		3E257E781AD58763007E7186 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E257E771AD58763007E7186 /* TabBarViewController.m */; };
-		3648AB2C1AD4436800CB861B /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3648AB2B1AD4436800CB861B /* CameraViewController.m */; };
 		3E47B6731AD35A450056D308 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6721AD35A450056D308 /* main.m */; };
 		3E47B6761AD35A450056D308 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6751AD35A450056D308 /* AppDelegate.m */; };
 		3E47B6791AD35A450056D308 /* Instagram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6771AD35A450056D308 /* Instagram.xcdatamodeld */; };
@@ -55,12 +55,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3648AB2A1AD4436800CB861B /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		3648AB2B1AD4436800CB861B /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		3E257E731AD4F4E9007E7186 /* FollowRecCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowRecCell.h; sourceTree = "<group>"; };
 		3E257E741AD4F4E9007E7186 /* FollowRecCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowRecCell.m; sourceTree = "<group>"; };
 		3E257E761AD58763007E7186 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		3E257E771AD58763007E7186 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
-		3648AB2A1AD4436800CB861B /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
-		3648AB2B1AD4436800CB861B /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		3E47B66D1AD35A450056D308 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E47B6711AD35A450056D308 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E47B6721AD35A450056D308 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -182,6 +182,7 @@
 				3E47B6BD1AD37D290056D308 /* ProfileViewController.h */,
 				3E47B6BE1AD37D290056D308 /* ProfileViewController.m */,
 				3E47B6C01AD381B00056D308 /* DetailPictureViewController.h */,
+				3E47B6821AD35A450056D308 /* LaunchScreen.xib */,
 				3E47B6C11AD381B00056D308 /* DetailPictureViewController.m */,
 				3E47B6C31AD382490056D308 /* EditProfileViewController.h */,
 				3E47B6C41AD382490056D308 /* EditProfileViewController.m */,
@@ -192,7 +193,6 @@
 				3E257E771AD58763007E7186 /* TabBarViewController.m */,
 				3E47B6801AD35A450056D308 /* Images.xcassets */,
 				F2356B901AD4434E003E6684 /* defaultimage.png */,
-				3E47B6821AD35A450056D308 /* LaunchScreen.xib */,
 				3E47B6771AD35A450056D308 /* Instagram.xcdatamodeld */,
 				3E47B6701AD35A450056D308 /* Supporting Files */,
 			);

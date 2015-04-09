@@ -26,10 +26,12 @@
     self.currentUser.followingArray = [NSMutableArray new];
 
     NSArray *emptyArray = @[];
+    
 
-    PFQuery *newQuery=[PFUser query];
+    PFQuery *newQuery=[User query];
     [newQuery whereKey:@"username" notContainedIn:emptyArray];
     [newQuery findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
+        
         NSLog(@"%li",(unsigned long)users.count);
         self.recommendationArray = users.mutableCopy;
         [self.tableView reloadData];
@@ -82,11 +84,11 @@
 
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    ProfileViewController *profileVC = [segue destinationViewController];
-//    profileVC.currentUser = self.currentUser;
-}
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    ProfileViewController *profileVC = [segue destinationViewController];
+////    profileVC.currentUser = self.currentUser;
+//}
 
 
 @end
