@@ -17,13 +17,14 @@
 @property NSMutableArray *imagesObjectsArray;
 @property (strong, nonatomic) Image *imageObject;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *logOutButton;
 @end
 
 @implementation MainPageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.ImageObject = [Image new];
+    self.imageObject = [Image new];
     
     
     //set the gesture recognizer
