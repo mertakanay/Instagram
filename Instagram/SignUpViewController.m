@@ -95,7 +95,7 @@
             if (!error)
             {
                 [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                    [self performSegueWithIdentifier:@"toSelectFirstTimeFollowers" sender:self];
+                     [self performSegueWithIdentifier:@"toSelectFirstTimeFollowers" sender:self];
                 }];
 
                 

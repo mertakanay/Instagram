@@ -14,6 +14,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *fullNameLabel;
 
+@property User *currentUser;
+@property NSArray *followingArray;
+
 @end
 
 @implementation ProfileViewController
@@ -21,17 +24,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.currentUser = [PFUser currentUser];
+    self.currentUser = [User currentUser];
 
-    self.followingsLabel.text = [NSString stringWithFormat:@"%lu following",(unsigned long)self.currentUser.followingArray.count];
-    self.fullNameLabel.text = self.currentUser.fullName;
-    NSLog(@"%@",self.currentUser.fullName);
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    PFRelation *relation = [User currentUser].followings;
+    [[relation query] findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        self.followingArray = objects;
+
+        self.followingsLabel.text = [NSString stringWithFormat:@"%lu following",self.followingArray.count];
+        self.fullNameLabel.text = [self.currentUser objectForKey:@"name"];
         [self.currentUser.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             if (!error) {
                 UIImage *image = [UIImage imageWithData:data];
                 self.profileImageView.image = image;
             }
         }];
+
+    }];
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath

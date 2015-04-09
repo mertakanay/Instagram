@@ -386,7 +386,7 @@
                             <constraint firstItem="bkq-t1-5ti" firstAttribute="bottom" secondItem="djp-G2-mJU" secondAttribute="bottomMargin" id="v4e-rk-GeK"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="hN6-AJ-Op7"/>
+                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="hN6-AJ-Op7"/>
                     <navigationItem key="navigationItem" title="Instagram" id="akN-5K-dvK">
                         <barButtonItem key="rightBarButtonItem" title="Log out" id="kjr-Uj-K7c">
                             <connections>
@@ -840,10 +840,10 @@
             </objects>
             <point key="canvasLocation" x="3458" y="443"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Page View Controller-->
         <scene sceneID="edV-Oa-dnN">
             <objects>
-                <viewController id="vZQ-yW-s57" sceneMemberID="viewController">
+                <viewController id="vZQ-yW-s57" customClass="SearchPageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mof-s6-Oka"/>
                         <viewControllerLayoutGuide type="bottom" id="bTB-9k-upY"/>
@@ -852,17 +852,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IhM-uz-Fkh">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="78" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IhM-uz-Fkh">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" rowHeight="66" id="XFR-Qm-9Pf">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellIDS" rowHeight="78" id="XFR-Qm-9Pf" customClass="SearchTableCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XFR-Qm-9Pf" id="8RG-Rf-2ke">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ede-mz-IED">
+                                                    <rect key="frame" x="192" y="24" width="92" height="30"/>
+                                                    <state key="normal" title="Follow">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="followButton" destination="Ede-mz-IED" id="fmj-rt-7Ay"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vZQ-yW-s57" id="54f-Q5-ehM"/>
+                                    <outlet property="delegate" destination="vZQ-yW-s57" id="ez1-nW-1Kl"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -875,6 +890,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="cOx-AP-cGI"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="tableView" destination="IhM-uz-Fkh" id="XY0-3R-jXi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRc-Yj-Zdd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

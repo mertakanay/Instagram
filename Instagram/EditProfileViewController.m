@@ -22,7 +22,7 @@
     [super viewDidLoad];
 
     self.editUsernameTF.text = self.currentUser.username;
-    self.editFullNameTF.text = self.currentUser.fullName;
+    self.editFullNameTF.text = [self.currentUser objectForKey:@"name"];
     self.editEmailTF.text = self.currentUser.email;
     [self.currentUser.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
@@ -57,7 +57,6 @@
         pickerView.delegate = self;
         pickerView.sourceType = UIImagePickerControllerSourceTypeCamera;
         [self presentViewController:pickerView animated:YES completion:nil];
-
     }
 }
 
@@ -69,13 +68,11 @@
 
     NSData *imageData = UIImagePNGRepresentation(image);
     PFFile *imageFile = [PFFile fileWithData:imageData];
+    self.imageView.image = image;
     self.currentUser.profileImage = imageFile;
     [self.currentUser.profileImage saveInBackground];
-    
-    
+
 }
-
-
 
 - (IBAction)onSaveButtonPressed:(UIButton *)sender
 {

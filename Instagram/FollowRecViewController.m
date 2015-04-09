@@ -23,9 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.recommendationArray = [NSMutableArray new];
- //   self.currentUser.followingArray = [NSMutableArray new];
-    self.selectedUsers =[NSMutableArray new];
+    self.selectedUsers = [NSMutableArray new];
+//    self.currentUser.followingArray = [NSMutableArray new];
+//    self.currentUser = [User currentUser];
 
     NSArray *emptyArray = @[];
     
@@ -74,27 +74,24 @@
 
     if (![self.selectedUsers containsObject:selectedUser])
     {
-        [[User currentUser] addUniqueObject:selectedUser forKey:@"followingArray"];
+//        [[User currentUser] addUniqueObject:selectedUser forKey:@"followingArray"];
         [[User currentUser].followings addObject:selectedUser];
-        [[User currentUser] saveInBackground];
-       // [[User currentUser].followingArray addObject:selectedUser];
-        
         [self.selectedUsers addObject:selectedUser];
+//        [self.currentUser.followingArray addObject:selectedUser];
         [sender setTitle:@"Unfollow" forState:UIControlStateNormal];
         sender.tintColor = [UIColor redColor];
-        
-    }else if ([self.currentUser.followingArray containsObject:selectedUser])
-    {
-         [[User currentUser] removeObject:selectedUser forKey:@"followingArray"];
-        [[User currentUser].followings removeObject:selectedUser];
         [[User currentUser] saveInBackground];
-//        [[User currentUser].followingArray removeObject:selectedUser];
+   
+    }else if ([self.selectedUsers containsObject:selectedUser])
+    {
+//        [[User currentUser] removeObject:selectedUser forKey:@"followingArray"];
+        [[User currentUser].followings removeObject:selectedUser];
         [self.selectedUsers removeObject:selectedUser];
+//        [self.currentUser.followingArray removeObject:selectedUser];
         [sender setTitle:@"Follow" forState:UIControlStateNormal];
         sender.tintColor = [UIColor blueColor];
-
+        [[User currentUser] saveInBackground];
     }
-
 }
 
 
