@@ -10,4 +10,6 @@
 
 @interface SearchTableCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIButton *followButton;
+
 @end

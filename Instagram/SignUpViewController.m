@@ -94,7 +94,9 @@
             //if call is succcessful - let the user use the app and take them to next screen.
             if (!error)
             {
-                [self performSegueWithIdentifier:@"toSelectFirstTimeFollowers" sender:self];
+                [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                     [self performSegueWithIdentifier:@"toSelectFirstTimeFollowers" sender:self];
+                }];
 
             } else {
                 //else diplay an alert to the user.

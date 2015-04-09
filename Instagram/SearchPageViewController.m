@@ -7,31 +7,121 @@
 //
 
 #import "SearchPageViewController.h"
+#import "User.h"
+#import "SearchTableCell.h"
 
-@interface SearchPageViewController ()
+@interface SearchPageViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property NSArray *usersArray;
+@property NSMutableArray *followingArray;
+//@property User *currentUser;
+//@property SearchTableCell *aCell;
 
 @end
 
 @implementation SearchPageViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    PFRelation *relation = [User currentUser].followings;
+    [[relation query] findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        self.followingArray = objects.mutableCopy;
+
+//        self.currentUser = [User currentUser];
+
+        NSArray *emptyArray = @[];
+        PFQuery *newQuery=[User query];
+        [newQuery whereKey:@"username" notContainedIn:emptyArray];
+        [newQuery findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
+            self.usersArray = users;
+            [self.tableView reloadData];
+
+        }];
+
+    }];
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SearchTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIDS"];
+
+    cell.followButton.tag = indexPath.row;
+
+    User *aSelectedUser = [self.usersArray objectAtIndex:indexPath.row];
+
+    if ([self areWeFollowingUser:aSelectedUser])
+    {
+        [cell.followButton setTitle:@"Unfollow" forState:UIControlStateNormal];
+        cell.followButton.tintColor = [UIColor redColor];
+
+    }else {
+        [cell.followButton setTitle:@"Follow" forState:UIControlStateNormal];
+        cell.followButton.tintColor = [UIColor blueColor];
+
+    }
+
+    cell.textLabel.text = [[self.usersArray objectAtIndex:indexPath.row]username];
+
+    //CODE FOR CELLS TO SHOW IMAGE
+
+    //    [[[self.recommendationArray objectAtIndex:indexPath.row]profileImage] getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+    //        if (!error) {
+    //            UIImage *image = [UIImage imageWithData:data];
+    //            cell.imageView.image = image;
+    //        }
+    //    }];
+
+
+    [cell.followButton addTarget:self action:@selector(followButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    
+
+    return cell;
 }
 
-/*
-#pragma mark - Navigation
+-(BOOL)areWeFollowingUser:(User *)user
+{
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    for (User *aUser in self.followingArray)
+    {
+        if ([aUser.objectId isEqualToString:user.objectId]) {
+            return true;
+        }
+    }
+    return false;
 }
-*/
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.usersArray.count;
+}
+
+-(void)followButtonPressed:(UIButton *)sender{
+
+    User *selectedUser = [self.usersArray objectAtIndex:sender.tag];
+
+    if (![self areWeFollowingUser:selectedUser])
+    {
+        [[User currentUser].followings addObject:selectedUser];
+        [self.followingArray addObject:selectedUser];
+        //        [self.currentUser.followingArray addObject:selectedUser];
+        [sender setTitle:@"Unfollow" forState:UIControlStateNormal];
+        sender.tintColor = [UIColor redColor];
+
+    }else if ([self areWeFollowingUser:selectedUser])
+    {
+        [[User currentUser].followings removeObject:selectedUser];
+        [self.followingArray removeObject:selectedUser];
+        //        [self.currentUser.followingArray removeObject:selectedUser];
+        [sender setTitle:@"Follow" forState:UIControlStateNormal];
+        sender.tintColor = [UIColor blueColor];
+        
+    }
+    
+}
+
 
 @end

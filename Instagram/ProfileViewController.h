@@ -11,6 +11,4 @@
 
 @interface ProfileViewController : UIViewController
 
-@property User *currentUser;
-
 @end
