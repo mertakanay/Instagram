@@ -21,6 +21,7 @@
     [super awakeFromNib];
 
     self.feedImage.image = nil;
+    self.imageOwnerProfilePicture.image = nil;
 }
 
 @end

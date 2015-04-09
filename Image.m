@@ -15,7 +15,7 @@
 @dynamic imageFile;
 @dynamic commentsArray;
 @dynamic likersArray;
-@dynamic owner;
+@dynamic postUser;
 
 @synthesize likers = _likers;
 @synthesize comments = _comments;

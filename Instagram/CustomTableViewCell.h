@@ -10,7 +10,10 @@
 
 @interface CustomTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *feedImage;
-@property (weak, nonatomic) IBOutlet UITextView *imageText;
-@property (weak, nonatomic) IBOutlet UILabel *postUser;
+@property (weak, nonatomic) IBOutlet UITextView *imageInfoText;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageOwnerProfilePicture;
+@property (weak, nonatomic) IBOutlet UILabel *imageOwnerUsername;
+
 
 @end

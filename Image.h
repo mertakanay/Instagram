@@ -18,7 +18,7 @@
 @property NSMutableArray *commentsArray;
 @property NSMutableArray *likersArray;
 
-@property (nonatomic) User *owner;
+@property (nonatomic) User *postUser;
 @property (nonatomic) PFRelation *likers;
 @property (nonatomic) PFRelation *comments;
 

@@ -13,7 +13,8 @@
 @interface FollowRecViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property NSMutableArray *recommendationArray;
+@property NSArray *recommendationArray;
+@property (nonatomic) NSMutableArray *selectedUsers;
 
 @end
 
@@ -23,7 +24,8 @@
     [super viewDidLoad];
 
     self.recommendationArray = [NSMutableArray new];
-    self.currentUser.followingArray = [NSMutableArray new];
+ //   self.currentUser.followingArray = [NSMutableArray new];
+    self.selectedUsers =[NSMutableArray new];
 
     NSArray *emptyArray = @[];
     
@@ -33,7 +35,7 @@
     [newQuery findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
         
         NSLog(@"%li",(unsigned long)users.count);
-        self.recommendationArray = users.mutableCopy;
+        self.recommendationArray = users;
         [self.tableView reloadData];
         
     }];
@@ -70,19 +72,32 @@
 
     User *selectedUser = [self.recommendationArray objectAtIndex:sender.tag];
 
-    if (![self.currentUser.followingArray containsObject:selectedUser])
+    if (![self.selectedUsers containsObject:selectedUser])
     {
-        [self.currentUser.followingArray addObject:selectedUser];
+        [[User currentUser] addUniqueObject:selectedUser forKey:@"followingArray"];
+        [[User currentUser].followings addObject:selectedUser];
+        [[User currentUser] saveInBackground];
+       // [[User currentUser].followingArray addObject:selectedUser];
+        
+        [self.selectedUsers addObject:selectedUser];
         [sender setTitle:@"Unfollow" forState:UIControlStateNormal];
         sender.tintColor = [UIColor redColor];
+        
     }else if ([self.currentUser.followingArray containsObject:selectedUser])
     {
-        [self.currentUser.followingArray removeObject:selectedUser];
+         [[User currentUser] removeObject:selectedUser forKey:@"followingArray"];
+        [[User currentUser].followings removeObject:selectedUser];
+        [[User currentUser] saveInBackground];
+//        [[User currentUser].followingArray removeObject:selectedUser];
+        [self.selectedUsers removeObject:selectedUser];
         [sender setTitle:@"Follow" forState:UIControlStateNormal];
         sender.tintColor = [UIColor blueColor];
     }
 
 }
+
+
+
 
 //-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 //{

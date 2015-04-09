@@ -25,11 +25,19 @@
     [Parse setApplicationId:@"GsBSWRAIB2pgztQBB3vKFxsZJCJUIWU4VMkDPrHT"
                   clientKey:@"6ee7RTuOtPF4zEAQjKGKtl6OUPSl4xrhUUY0HSc5"];
     
-    PFQuery *query = [Image query];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        <#code#>
+//    PFQuery *query = [User query];
+////    [query includeKey:@"followings"];
+//    [query getObjectInBackgroundWithId:@"g5ZcayHEVk" block:^(PFObject *object, NSError *error) {
+//        PFRelation *relation = ((User *)object).followings;
+//        [[relation query] findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//            for (User *user in objects) {
+//                NSLog(@"%@",user.username);
+//            }
+//
+//        }];
+//
 //    }];
-    
+
     return YES;
 }
 
