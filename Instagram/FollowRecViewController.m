@@ -13,7 +13,7 @@
 @interface FollowRecViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property NSMutableArray *recommendationArray;
+@property NSArray *recommendationArray;
 
 @end
 
@@ -72,14 +72,18 @@
 
     if (![self.currentUser.followingArray containsObject:selectedUser])
     {
-        [self.currentUser.followingArray addObject:selectedUser];
+        [self.currentUser addUniqueObject:selectedUser forKey:@"followingArray"];
+//        [self.currentUser.followingArray addObject:selectedUser];
         [sender setTitle:@"Unfollow" forState:UIControlStateNormal];
         sender.tintColor = [UIColor redColor];
+   
     }else if ([self.currentUser.followingArray containsObject:selectedUser])
     {
-        [self.currentUser.followingArray removeObject:selectedUser];
+        [self.currentUser removeObject:selectedUser forKey:@"followingArray"];
+//        [self.currentUser.followingArray removeObject:selectedUser];
         [sender setTitle:@"Follow" forState:UIControlStateNormal];
         sender.tintColor = [UIColor blueColor];
+
     }
 
 }

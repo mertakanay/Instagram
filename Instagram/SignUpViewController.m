@@ -95,7 +95,7 @@
             if (!error)
             {
                 [self performSegueWithIdentifier:@"toSelectFirstTimeFollowers" sender:self];
-                
+
             } else {
                 //else diplay an alert to the user.
 
@@ -113,6 +113,8 @@
     if (![signUpError isEqualToString:@""]) {
         [self displayAlert:signUpError];
     }
+
+
 
 }
 
@@ -153,7 +155,8 @@
     self.currentUser.profileImage = imageFile;
     self.profileImageVC.image = img;
     [self.currentUser.profileImage saveInBackground];
-    
+
+
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -162,5 +165,6 @@
     followRVC.currentUser = self.currentUser;
     
 }
+
 
 @end
