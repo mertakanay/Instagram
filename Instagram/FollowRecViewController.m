@@ -92,6 +92,7 @@
         [self.selectedUsers removeObject:selectedUser];
         [sender setTitle:@"Follow" forState:UIControlStateNormal];
         sender.tintColor = [UIColor blueColor];
+
     }
 
 }

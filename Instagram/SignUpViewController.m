@@ -117,6 +117,8 @@
         [self displayAlert:signUpError];
     }
 
+
+
 }
 
 #pragma Mark - ActionSheet Delegates for Choosing Image. 
@@ -156,7 +158,8 @@
     self.currentUser.profileImage = imageFile;
     self.profileImageVC.image = img;
     [self.currentUser.profileImage saveInBackground];
-    
+
+
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -165,5 +168,6 @@
     followRVC.currentUser = self.currentUser;
     
 }
+
 
 @end

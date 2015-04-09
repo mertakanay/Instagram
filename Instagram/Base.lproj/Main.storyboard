@@ -157,7 +157,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onRegisterButtonPressed:" destination="Gew-8e-fZV" eventType="touchUpInside" id="55x-I6-oKR"/>
+                                    <action selector="onRegisterButtonPressed:" destination="Gew-8e-fZV" eventType="touchUpInside" id="tLE-ro-ezN"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="full name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="peD-yY-3Mu">
@@ -726,7 +726,7 @@
                             <constraint firstItem="hEU-I6-QyJ" firstAttribute="top" secondItem="OBr-EV-GZo" secondAttribute="bottom" constant="8" id="zGm-iS-HPH"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="topRated" id="W9J-M9-jpB"/>
+                    <tabBarItem key="tabBarItem" title="" systemItem="contacts" id="W9J-M9-jpB"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="followingsLabel" destination="mgX-9k-Bb0" id="LGb-0P-oT9"/>
@@ -766,6 +766,9 @@
                                 <state key="normal" title="edit profile picture">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onEditProfilePictureButtonPressed:" destination="4rM-Og-GFH" eventType="touchUpInside" id="dYF-Xh-tkW"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="edit username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fJx-AE-91O">
                                 <rect key="frame" x="16" y="107" width="226" height="30"/>
@@ -794,6 +797,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mgl-Dk-uJG">
+                                <rect key="frame" x="196" y="281" width="34" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="W8A-Nz-Oav"/>
+                                    <constraint firstAttribute="height" constant="30" id="oTp-oD-5Y8"/>
+                                </constraints>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSaveButtonPressed:" destination="4rM-Og-GFH" eventType="touchUpInside" id="hMG-Ca-flw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -805,12 +821,20 @@
                             <constraint firstItem="WW0-ua-Oi4" firstAttribute="top" secondItem="f6q-Bm-sLv" secondAttribute="bottom" constant="25" id="Tpk-HL-Q5K"/>
                             <constraint firstItem="YLv-TN-Wx6" firstAttribute="top" secondItem="Ng1-M0-fan" secondAttribute="bottom" constant="8" id="Wn5-8O-Nyc"/>
                             <constraint firstAttribute="centerY" secondItem="Ng1-M0-fan" secondAttribute="centerY" constant="211" id="Xu9-4q-LhO"/>
+                            <constraint firstAttribute="centerX" secondItem="Mgl-Dk-uJG" secondAttribute="centerX" constant="-6" id="lb0-gD-aTa"/>
+                            <constraint firstAttribute="centerY" secondItem="Mgl-Dk-uJG" secondAttribute="centerY" constant="72" id="nvC-L8-uj0"/>
                             <constraint firstAttribute="centerX" secondItem="YLv-TN-Wx6" secondAttribute="centerX" constant="-118" id="p5C-j5-MFq"/>
                             <constraint firstAttribute="centerY" secondItem="WW0-ua-Oi4" secondAttribute="centerY" constant="136" id="xM7-F8-QNs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Profile" id="FLT-rq-BoD"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="editEmailTF" destination="WW0-ua-Oi4" id="rc5-xf-MAt"/>
+                        <outlet property="editFullNameTF" destination="f6q-Bm-sLv" id="dfJ-Fb-1Zo"/>
+                        <outlet property="editUsernameTF" destination="fJx-AE-91O" id="yMs-EX-A8z"/>
+                        <outlet property="imageView" destination="Ng1-M0-fan" id="kSj-LA-sOn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5c-GJ-clZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -828,14 +852,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="STRECH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSE-xd-wMH">
-                                <rect key="frame" x="106" y="273" width="202" height="132"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IhM-uz-Fkh">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" rowHeight="66" id="XFR-Qm-9Pf">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XFR-Qm-9Pf" id="8RG-Rf-2ke">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IhM-uz-Fkh" firstAttribute="top" secondItem="5D8-yQ-WHe" secondAttribute="topMargin" id="A6k-Xg-jnT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IhM-uz-Fkh" secondAttribute="trailing" constant="-16" id="YfY-o5-scJ"/>
+                            <constraint firstItem="IhM-uz-Fkh" firstAttribute="bottom" secondItem="5D8-yQ-WHe" secondAttribute="bottomMargin" id="cHV-yQ-tow"/>
+                            <constraint firstItem="IhM-uz-Fkh" firstAttribute="leading" secondItem="5D8-yQ-WHe" secondAttribute="leadingMargin" constant="-16" id="pnv-3M-z42"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="cOx-AP-cGI"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>

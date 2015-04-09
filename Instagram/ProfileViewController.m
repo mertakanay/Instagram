@@ -7,6 +7,7 @@
 //
 
 #import "ProfileViewController.h"
+#import "EditProfileViewController.h"
 
 @interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *followingsLabel;
@@ -42,4 +43,11 @@
 {
     return 0;
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    EditProfileViewController *editVC = [segue destinationViewController];
+    editVC.currentUser = self.currentUser;
+}
+
 @end
