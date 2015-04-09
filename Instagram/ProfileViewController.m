@@ -20,11 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.currentUser = [User currentUser];
+    self.currentUser = [PFUser currentUser];
 
     self.followingsLabel.text = [NSString stringWithFormat:@"%lu following",(unsigned long)self.currentUser.followingArray.count];
-    self.fullNameLabel.text = self.currentUser.username;
-    NSLog(@"%@",self.currentUser.username);
+    self.fullNameLabel.text = self.currentUser.fullName;
+    NSLog(@"%@",self.currentUser.fullName);
         [self.currentUser.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             if (!error) {
                 UIImage *image = [UIImage imageWithData:data];
