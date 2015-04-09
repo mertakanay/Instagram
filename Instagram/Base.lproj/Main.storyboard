@@ -471,7 +471,7 @@
                             <constraint firstItem="bkq-t1-5ti" firstAttribute="bottom" secondItem="djp-G2-mJU" secondAttribute="bottomMargin" id="v4e-rk-GeK"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Main" id="hN6-AJ-Op7"/>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="hN6-AJ-Op7"/>
                     <navigationItem key="navigationItem" title="Instagram" id="akN-5K-dvK">
                         <barButtonItem key="rightBarButtonItem" title="Log out" id="kjr-Uj-K7c">
                             <connections>
@@ -600,7 +600,7 @@
             </objects>
             <point key="canvasLocation" x="3450" y="-473"/>
         </scene>
-        <!--Search-->
+        <!--View Controller-->
         <scene sceneID="3wK-oZ-6uQ">
             <objects>
                 <viewController id="MWW-Un-6n9" sceneMemberID="viewController">
@@ -621,13 +621,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" id="DvI-1F-3JC"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="DvI-1F-3JC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vnO-Ep-UzT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2822" y="-2726"/>
         </scene>
-        <!--Camera-->
+        <!--Camera View Controller-->
         <scene sceneID="WJS-jT-v5P">
             <objects>
                 <viewController id="Jbh-RR-yy3" customClass="CameraViewController" sceneMemberID="viewController">
@@ -678,7 +678,7 @@
                             <constraint firstItem="GM2-fA-fkT" firstAttribute="top" secondItem="v6b-M1-eAk" secondAttribute="bottom" constant="19" id="wYg-9E-Htb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Camera" id="qiH-By-lSc"/>
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="qiH-By-lSc"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="commentTextView" destination="HWA-dX-E3W" id="dau-e5-vOE"/>
@@ -689,7 +689,7 @@
             </objects>
             <point key="canvasLocation" x="2840" y="-1846"/>
         </scene>
-        <!--Profile-->
+        <!--Profile View Controller-->
         <scene sceneID="Q1P-Jb-Wc6">
             <objects>
                 <viewController id="njj-Ad-n18" customClass="ProfileViewController" sceneMemberID="viewController">
@@ -809,7 +809,7 @@
                             <constraint firstAttribute="centerY" secondItem="Cf6-Vs-iqS" secondAttribute="centerY" constant="194" id="zvC-gl-boa"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="W9J-M9-jpB"/>
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="W9J-M9-jpB"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="followingsLabel" destination="mgX-9k-Bb0" id="LGb-0P-oT9"/>
@@ -899,7 +899,7 @@
             </objects>
             <point key="canvasLocation" x="3458" y="443"/>
         </scene>
-        <!--Actions-->
+        <!--View Controller-->
         <scene sceneID="edV-Oa-dnN">
             <objects>
                 <viewController id="vZQ-yW-s57" sceneMemberID="viewController">
@@ -920,7 +920,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Actions" id="cOx-AP-cGI"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="cOx-AP-cGI"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRc-Yj-Zdd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -949,10 +949,11 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="ofx-VG-2CT">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bxk-an-zER" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="IRp-4V-5CM" customClass="TabBarViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="wVa-Mm-VwS">
+                    <tabBar key="tabBar" contentMode="scaleToFill" selectionIndicatorImage="defaultimage" id="wVa-Mm-VwS">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -964,7 +965,6 @@
                         <segue destination="njj-Ad-n18" kind="relationship" relationship="viewControllers" id="f1e-cE-plu"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bxk-an-zER" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2113" y="-1192"/>
         </scene>
@@ -973,7 +973,7 @@
         <image name="defaultimage" width="1200" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="coX-Sf-ojj"/>
         <segue reference="Nos-6f-NMB"/>
+        <segue reference="zme-qO-LLY"/>
     </inferredMetricsTieBreakers>
 </document>
