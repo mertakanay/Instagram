@@ -18,6 +18,7 @@
 @property (strong, nonatomic) Image *imageObject;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *logOutButton;
+@property BOOL hasLiked;
 @end
 
 @implementation MainPageViewController
@@ -25,6 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.imageObject = [Image new];
+    self.hasLiked = false;
+
 
 
 
@@ -51,7 +54,7 @@
                 // The find succeeded.
                 NSLog(@"Successfully retrieved %lu images.", (unsigned long)objects.count);
 
-                self.imagesObjectsArray = objects;
+                self.imagesObjectsArray = objects.copy;
 
 
 
@@ -75,20 +78,63 @@
 - (void)doubleTapGestureCaptured:(UITapGestureRecognizer*)gesture{
     NSLog(@"Left Image clicked");
 
+
     UIImageView *imageV = (UIImageView *)gesture.view;
     NSInteger row = imageV.tag;
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
     CustomTableViewCell *cell = (CustomTableViewCell*)[self.tableView cellForRowAtIndexPath:indexPath];
 
-    [UIView animateWithDuration:(.5) animations:^{
-        cell.heartImage.alpha = 1.0;
 
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:.5 animations:^{
+    //hasLiked
+    if (self.hasLiked == false) {
+        self.hasLiked = true;
 
-            cell.heartImage.alpha = 0.0;
+        //increment the like counts
+        self.imageObject = self.imagesObjectsArray[indexPath.row];
+        cell.heartImage.image = [UIImage imageNamed:@"heart.png"];
+
+        [self.tableView reloadData];
+
+        [self.imageObject incrementKey:@"likesCounter" byAmount:[NSNumber numberWithInt:1]];
+        [self.imageObject saveInBackground];
+
+        [UIView animateWithDuration:(.5) animations:^{
+            cell.heartImage.alpha = 1.0;
+
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:.5 animations:^{
+
+                cell.heartImage.alpha = 0.0;
+            }];
         }];
-    }];
+
+    } else {
+
+        //increment the like counts
+        self.imageObject = self.imagesObjectsArray[indexPath.row];
+        cell.heartImage.image = [UIImage imageNamed:@"brokenheart"];
+
+        [self.tableView reloadData];
+
+        [self.imageObject incrementKey:@"likesCounter" byAmount:[NSNumber numberWithInt:-1]];
+        [self.imageObject saveInBackground];
+        self.hasLiked = false;
+
+        [UIView animateWithDuration:(.5) animations:^{
+            cell.heartImage.alpha = 1.0;
+
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:.5 animations:^{
+
+                cell.heartImage.alpha = 0.0;
+            }];
+        }];
+
+    }
+
+
+
+
 
 
 
@@ -113,22 +159,35 @@
 
     self.imageObject = self.imagesObjectsArray[indexPath.row];
 
+    //get the number of likes
 
-    //image text
-    cell.imageInfoText.text = [NSString stringWithFormat:@"43 Likes \n%@ %@",self.imageObject.username, self.imageObject.imageDescription];
-    NSRange range = [cell.imageInfoText.text rangeOfString:self.imageObject.username];
+    NSNumber *numberOfLikes = self.imageObject.likesCounter;
+
+    //image text formatting
+    cell.imageInfoText.text = [NSString stringWithFormat:@"%@ Likes \n%@ %@", numberOfLikes, self.imageObject.username, self.imageObject.imageDescription];
+
+    //set the user for of person who posted.
+    cell.imageOwnerUsername.text = self.imageObject.username;
+
+
+
+
+
+    //username attributted text
+    NSRange range = [cell.imageInfoText.text rangeOfString:[NSString stringWithFormat:@"%@ Likes \n%@", numberOfLikes, self.imageObject.username]];
 
     NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc]initWithString:cell.imageInfoText.text];
-
-
     [attributedText setAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:17.0f]} range:range];
     [attributedText addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:range];
     [cell.imageInfoText  setAttributedText:attributedText];
 
     cell.imageInfoText.attributedText = attributedText;
 
-    //image owner name
-    cell.imageOwnerUsername.text = self.imageObject.username;
+
+
+
+
+
 
 
     PFQuery *query = [User query];

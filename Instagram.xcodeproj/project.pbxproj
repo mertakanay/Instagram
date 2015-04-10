@@ -46,6 +46,16 @@
 		F2356B911AD4434E003E6684 /* defaultimage.png in Resources */ = {isa = PBXBuildFile; fileRef = F2356B901AD4434E003E6684 /* defaultimage.png */; };
 		F24B34EF1AD73772006153EC /* CustomTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F24B34EE1AD73772006153EC /* CustomTextView.m */; };
 		F24B34F11AD7418C006153EC /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = F24B34F01AD7418C006153EC /* heart.png */; };
+		F24B34F31AD76A5C006153EC /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = F24B34F21AD76A5C006153EC /* home.png */; };
+		F24B34F91AD76EAA006153EC /* cameraicon.png in Resources */ = {isa = PBXBuildFile; fileRef = F24B34F81AD76EAA006153EC /* cameraicon.png */; };
+		F24B34FD1AD7736B006153EC /* heartz.png in Resources */ = {isa = PBXBuildFile; fileRef = F24B34FC1AD7736B006153EC /* heartz.png */; };
+		F24B34FF1AD7748D006153EC /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = F24B34FE1AD7748D006153EC /* search.png */; };
+		F24B35011AD7752C006153EC /* profileimage.png in Resources */ = {isa = PBXBuildFile; fileRef = F24B35001AD7752C006153EC /* profileimage.png */; };
+		F24B35051AD8342F006153EC /* brokenheart.png in Resources */ = {isa = PBXBuildFile; fileRef = F24B35041AD8342E006153EC /* brokenheart.png */; };
+		F24B35071AD83629006153EC /* instagram_launchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = F24B35061AD83629006153EC /* instagram_launchScreen.png */; };
+		F24B350A1AD839A5006153EC /* x120igicon.png in Resources */ = {isa = PBXBuildFile; fileRef = F24B35081AD839A5006153EC /* x120igicon.png */; };
+		F24B350B1AD839A5006153EC /* x180igicon.png in Resources */ = {isa = PBXBuildFile; fileRef = F24B35091AD839A5006153EC /* x180igicon.png */; };
+		F24B350D1AD83A85006153EC /* Instagram_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F24B350C1AD83A85006153EC /* Instagram_logo.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +130,16 @@
 		F24B34ED1AD73772006153EC /* CustomTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTextView.h; sourceTree = "<group>"; };
 		F24B34EE1AD73772006153EC /* CustomTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTextView.m; sourceTree = "<group>"; };
 		F24B34F01AD7418C006153EC /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		F24B34F21AD76A5C006153EC /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		F24B34F81AD76EAA006153EC /* cameraicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraicon.png; sourceTree = "<group>"; };
+		F24B34FC1AD7736B006153EC /* heartz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartz.png; sourceTree = "<group>"; };
+		F24B34FE1AD7748D006153EC /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		F24B35001AD7752C006153EC /* profileimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileimage.png; sourceTree = "<group>"; };
+		F24B35041AD8342E006153EC /* brokenheart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brokenheart.png; sourceTree = "<group>"; };
+		F24B35061AD83629006153EC /* instagram_launchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = instagram_launchScreen.png; sourceTree = "<group>"; };
+		F24B35081AD839A5006153EC /* x120igicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x120igicon.png; sourceTree = "<group>"; };
+		F24B35091AD839A5006153EC /* x180igicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x180igicon.png; sourceTree = "<group>"; };
+		F24B350C1AD83A85006153EC /* Instagram_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Instagram_logo.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +229,16 @@
 				3E257E761AD58763007E7186 /* TabBarViewController.h */,
 				3E257E771AD58763007E7186 /* TabBarViewController.m */,
 				3E47B6801AD35A450056D308 /* Images.xcassets */,
+				F24B350C1AD83A85006153EC /* Instagram_logo.jpg */,
+				F24B35081AD839A5006153EC /* x120igicon.png */,
+				F24B35091AD839A5006153EC /* x180igicon.png */,
+				F24B35061AD83629006153EC /* instagram_launchScreen.png */,
+				F24B34F21AD76A5C006153EC /* home.png */,
+				F24B35001AD7752C006153EC /* profileimage.png */,
+				F24B35041AD8342E006153EC /* brokenheart.png */,
+				F24B34FE1AD7748D006153EC /* search.png */,
+				F24B34FC1AD7736B006153EC /* heartz.png */,
+				F24B34F81AD76EAA006153EC /* cameraicon.png */,
 				F2356B901AD4434E003E6684 /* defaultimage.png */,
 				F24B34F01AD7418C006153EC /* heart.png */,
 				3E47B6771AD35A450056D308 /* Instagram.xcdatamodeld */,
@@ -357,11 +387,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F24B350A1AD839A5006153EC /* x120igicon.png in Resources */,
 				3E47B67F1AD35A450056D308 /* Main.storyboard in Resources */,
+				F24B350D1AD83A85006153EC /* Instagram_logo.jpg in Resources */,
+				F24B35071AD83629006153EC /* instagram_launchScreen.png in Resources */,
+				F24B34FF1AD7748D006153EC /* search.png in Resources */,
 				3E47B6841AD35A450056D308 /* LaunchScreen.xib in Resources */,
+				F24B34F31AD76A5C006153EC /* home.png in Resources */,
+				F24B35051AD8342F006153EC /* brokenheart.png in Resources */,
 				F24B34F11AD7418C006153EC /* heart.png in Resources */,
+				F24B35011AD7752C006153EC /* profileimage.png in Resources */,
+				F24B350B1AD839A5006153EC /* x180igicon.png in Resources */,
 				3E47B6811AD35A450056D308 /* Images.xcassets in Resources */,
 				F2356B911AD4434E003E6684 /* defaultimage.png in Resources */,
+				F24B34FD1AD7736B006153EC /* heartz.png in Resources */,
+				F24B34F91AD76EAA006153EC /* cameraicon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

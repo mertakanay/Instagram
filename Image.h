@@ -21,6 +21,7 @@
 @property (nonatomic) User *postUser;
 @property (nonatomic) PFRelation *likers;
 @property (nonatomic) PFRelation *comments;
+@property NSNumber *likesCounter;
 
 + (NSString *)parseClassName;
 
