@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *editFullNameTF;
 @property (weak, nonatomic) IBOutlet UITextField *editEmailTF;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIButton *editProfilePictureButton;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
 
 @end
 
@@ -21,9 +23,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.view.backgroundColor = [UIColor colorWithRed:194/255.0 green:223/255.0 blue:255/255.0 alpha:1.0];
+
+    self.editProfilePictureButton.layer.borderWidth=1.5f;
+    self.editProfilePictureButton.layer.borderColor=[[UIColor blackColor] CGColor];
+    self.editProfilePictureButton.backgroundColor = [UIColor colorWithRed:250/255.0 green:178/255.0 blue:130/255.0 alpha:1.0];
+
+    self.saveButton.layer.borderWidth=1.5f;
+    self.saveButton.layer.borderColor=[[UIColor blackColor] CGColor];
+    self.saveButton.backgroundColor = [UIColor colorWithRed:250/255.0 green:178/255.0 blue:130/255.0 alpha:1.0];
+
     self.editUsernameTF.text = self.currentUser.username;
+    self.editUsernameTF.backgroundColor = [UIColor colorWithRed:194/255.0 green:223/255.0 blue:255/255.0 alpha:1.0];
     self.editFullNameTF.text = [self.currentUser objectForKey:@"name"];
+    self.editFullNameTF.backgroundColor = [UIColor colorWithRed:194/255.0 green:223/255.0 blue:255/255.0 alpha:1.0];
     self.editEmailTF.text = self.currentUser.email;
+    self.editEmailTF.backgroundColor = [UIColor colorWithRed:194/255.0 green:223/255.0 blue:255/255.0 alpha:1.0];
     [self.currentUser.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
             UIImage *image = [UIImage imageWithData:data];
