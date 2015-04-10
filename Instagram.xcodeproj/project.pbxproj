@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3648AB2C1AD4436800CB861B /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3648AB2B1AD4436800CB861B /* CameraViewController.m */; };
+		36E263F71AD7AC3700E5B575 /* PreparePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E263F61AD7AC3700E5B575 /* PreparePhotoViewController.m */; };
+		36E263F91AD7C14000E5B575 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36E263F81AD7C14000E5B575 /* Images.xcassets */; };
 		3E257E751AD4F4E9007E7186 /* FollowRecCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E257E741AD4F4E9007E7186 /* FollowRecCell.m */; };
 		3E257E781AD58763007E7186 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E257E771AD58763007E7186 /* TabBarViewController.m */; };
 		3E47B6731AD35A450056D308 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6721AD35A450056D308 /* main.m */; };
@@ -15,7 +17,6 @@
 		3E47B6791AD35A450056D308 /* Instagram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6771AD35A450056D308 /* Instagram.xcdatamodeld */; };
 		3E47B67C1AD35A450056D308 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B67B1AD35A450056D308 /* SignInViewController.m */; };
 		3E47B67F1AD35A450056D308 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E47B67D1AD35A450056D308 /* Main.storyboard */; };
-		3E47B6811AD35A450056D308 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E47B6801AD35A450056D308 /* Images.xcassets */; };
 		3E47B6841AD35A450056D308 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E47B6821AD35A450056D308 /* LaunchScreen.xib */; };
 		3E47B6901AD35A450056D308 /* InstagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B68F1AD35A450056D308 /* InstagramTests.m */; };
 		3E47B69B1AD35C000056D308 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E47B6991AD35C000056D308 /* Bolts.framework */; };
@@ -59,6 +60,9 @@
 /* Begin PBXFileReference section */
 		3648AB2A1AD4436800CB861B /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		3648AB2B1AD4436800CB861B /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		36E263F51AD7AC3700E5B575 /* PreparePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreparePhotoViewController.h; sourceTree = "<group>"; };
+		36E263F61AD7AC3700E5B575 /* PreparePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreparePhotoViewController.m; sourceTree = "<group>"; };
+		36E263F81AD7C14000E5B575 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3E257E731AD4F4E9007E7186 /* FollowRecCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowRecCell.h; sourceTree = "<group>"; };
 		3E257E741AD4F4E9007E7186 /* FollowRecCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowRecCell.m; sourceTree = "<group>"; };
 		3E257E761AD58763007E7186 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
@@ -72,7 +76,6 @@
 		3E47B67A1AD35A450056D308 /* SignInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		3E47B67B1AD35A450056D308 /* SignInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		3E47B67E1AD35A450056D308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3E47B6801AD35A450056D308 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3E47B6831AD35A450056D308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3E47B6891AD35A450056D308 /* InstagramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E47B68E1AD35A450056D308 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 				3E47B67B1AD35A450056D308 /* SignInViewController.m */,
 				3648AB2A1AD4436800CB861B /* CameraViewController.h */,
 				3648AB2B1AD4436800CB861B /* CameraViewController.m */,
+				36E263F51AD7AC3700E5B575 /* PreparePhotoViewController.h */,
+				36E263F61AD7AC3700E5B575 /* PreparePhotoViewController.m */,
 				3E47B6B41AD367B80056D308 /* SignUpViewController.h */,
 				3E47B6B51AD367B80056D308 /* SignUpViewController.m */,
 				3E47B6B71AD367F00056D308 /* FollowRecViewController.h */,
@@ -201,7 +206,7 @@
 				3EBABC911AD63CA500055D70 /* SearchTableCell.m */,
 				3E257E761AD58763007E7186 /* TabBarViewController.h */,
 				3E257E771AD58763007E7186 /* TabBarViewController.m */,
-				3E47B6801AD35A450056D308 /* Images.xcassets */,
+				36E263F81AD7C14000E5B575 /* Images.xcassets */,
 				F2356B901AD4434E003E6684 /* defaultimage.png */,
 				3E47B6771AD35A450056D308 /* Instagram.xcdatamodeld */,
 				3E47B6701AD35A450056D308 /* Supporting Files */,
@@ -350,8 +355,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E47B67F1AD35A450056D308 /* Main.storyboard in Resources */,
+				36E263F91AD7C14000E5B575 /* Images.xcassets in Resources */,
 				3E47B6841AD35A450056D308 /* LaunchScreen.xib in Resources */,
-				3E47B6811AD35A450056D308 /* Images.xcassets in Resources */,
 				F2356B911AD4434E003E6684 /* defaultimage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +390,7 @@
 				F2356B8F1AD3C624003E6684 /* Comment.m in Sources */,
 				3E257E781AD58763007E7186 /* TabBarViewController.m in Sources */,
 				3E47B6BC1AD373CE0056D308 /* MainPageViewController.m in Sources */,
+				36E263F71AD7AC3700E5B575 /* PreparePhotoViewController.m in Sources */,
 				F2356B8C1AD3C5F7003E6684 /* Image.m in Sources */,
 				3EBABC921AD63CA500055D70 /* SearchTableCell.m in Sources */,
 				3E47B6B91AD367F00056D308 /* FollowRecViewController.m in Sources */,

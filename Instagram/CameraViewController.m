@@ -8,24 +8,30 @@
 
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+
 #import "CameraViewController.h"
-#import "User.h"
-#import "Image.h"
 #import "Comment.h"
+#import "Image.h"
+#import "PreparePhotoViewController.h"
 
 
+@interface CameraViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate, PreparePhotoViewControllerDelegate>
 
-@interface CameraViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate, UITextViewDelegate>
+//@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+//@property (weak, nonatomic) IBOutlet UITextView *commentTextView;
+//@property (weak, nonatomic) IBOutlet UIButton *doneButton;
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UITextView *commentTextView;
-
+@property (nonatomic) UIButton *libraryButton;
+@property (nonatomic) UIImageView *libraryImageView;
+@property (nonatomic) UIButton *cameraButton;
 @property (nonatomic) UIImagePickerController *cameraImagePickerController;
 @property (nonatomic) UIImagePickerController *libraryImagePickerController;
 
 @property (nonatomic) UIImage *albumImage;
 
 @property (nonatomic) Image *pickedPhoto;
+
+@property (nonatomic) PreparePhotoViewController *preparePhotoVC;
 
 
 @end
@@ -34,33 +40,83 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+//    [[self.commentTextView layer] setBorderColor:[[UIColor grayColor] CGColor]];
+//    [[self.commentTextView layer] setBorderWidth:2.3];
+//    [[self.commentTextView layer] setCornerRadius:15];
+//    self.commentTextView.textColor = [UIColor lightGrayColor];
+//    
+//    self.view.hidden = YES;
+    
+    
+
+
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+    [self getLatestPhotoFromAlbum];
     [self presentCamera];
     
-    [[self.commentTextView layer] setBorderColor:[[UIColor grayColor] CGColor]];
-    [[self.commentTextView  layer] setBorderWidth:2.3];
-    [[self.commentTextView layer] setCornerRadius:15];
-    self.commentTextView.textColor = [UIColor lightGrayColor];
 }
+
 
 -(void)presentCamera
 {
+
     self.cameraImagePickerController = [UIImagePickerController new];
     self.cameraImagePickerController.delegate = self;
     self.cameraImagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
     self.cameraImagePickerController.mediaTypes = @[(NSString *)kUTTypeImage];
+    self.cameraImagePickerController.showsCameraControls=YES;  //we will make custom controls.
+    
     [self presentViewController:self.cameraImagePickerController animated:YES completion:nil];
     
-    [self getLatestPhotoFromAlbum];
+
     
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(120, 10, 100, 30)];
-    [button setTitle:@"Library" forState:UIControlStateNormal];
-    [button setTintColor:[UIColor whiteColor]];
-    [button setBackgroundColor:[UIColor clearColor]];
-    [button addTarget:self action:@selector(gotoLibrary:) forControlEvents:UIControlEventTouchUpInside];
-    [self.cameraImagePickerController.view addSubview:button];
+//    self.libraryButton = [[UIButton alloc] initWithFrame:CGRectMake(200, 450, 100, 30)];
+//    [self.libraryButton setTitle:@"Library" forState:UIControlStateNormal];
+//    [self.libraryButton setTintColor:[UIColor whiteColor]];
+//    [self.libraryButton setBackgroundColor:[UIColor clearColor]];
+//    [self.libraryButton addTarget:self action:@selector(gotoLibrary:) forControlEvents:UIControlEventTouchUpInside];
+//    self.libraryButton.hidden = NO;
+//    [self.cameraImagePickerController.view addSubview:self.libraryButton];
+//
+    self.libraryImageView = [[UIImageView alloc]initWithFrame:CGRectMake(250, 505, 50, 50)];
+//    [self.libraryImageView setNeedsDisplay];
+    self.libraryImageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(gotoLibrary:)];
+    [self.libraryImageView addGestureRecognizer:tapGesture];
+    self.libraryImageView.image = self.albumImage;
+    [self.cameraImagePickerController.view addSubview:self.libraryImageView];
     
+    self.cameraButton = [[UIButton alloc] initWithFrame:CGRectMake(115, 480, 100, 100)];
+//    [self.cameraButton setTitle:@"TakePhoto" forState:UIControlStateNormal];
+    [self.cameraButton setBackgroundImage:[UIImage imageNamed:@"camera"] forState:UIControlStateNormal];
+    [self.cameraButton setTintColor:[UIColor whiteColor]];
+    [self.cameraButton setBackgroundColor:[UIColor clearColor]];
+    [self.cameraButton addTarget:self action:@selector(shootPicture) forControlEvents:UIControlEventTouchUpInside];
+    [self.cameraImagePickerController.view addSubview:self.cameraButton];
     
 
+}
+
+-(void)cancelPicker
+{
+    //get rid of the image picker
+    [self dismissViewControllerAnimated:YES completion:nil]; //dismiss uiimagepicker
+    self.cameraImagePickerController=nil;
+}
+
+//take the picture, it will then go directly to - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info method
+-(void)shootPicture
+{
+    self.libraryImageView.hidden = YES;
+    self.cameraButton.hidden = YES;
+    [self.cameraImagePickerController takePicture];
+    self.cameraImagePickerController.showsCameraControls = NO;
 }
 
 -(IBAction)gotoLibrary:(id)sender
@@ -92,7 +148,7 @@
                 
                 
                 self.albumImage =  [UIImage imageWithCGImage:[alAsset thumbnail]];
-                
+                self.libraryImageView.image = self.albumImage;
                 
                 // Stop the enumerations
                 *stop = YES; *innerStop = YES;
@@ -115,57 +171,32 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
    
-    [self dismissViewControllerAnimated:YES completion:nil];
-    self.imageView.image = info[UIImagePickerControllerOriginalImage];
+    [self dismissViewControllerAnimated:NO completion:nil];
     
-    NSData *imageData = UIImageJPEGRepresentation(self.imageView.image,0.5);
-    PFFile *imageFile = [PFFile fileWithName:@"Picked photo" data:imageData];
-    self.pickedPhoto = [Image object];
-    self.pickedPhoto.imageFile = imageFile;
-    [self.pickedPhoto saveInBackground];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    self.preparePhotoVC= [storyboard instantiateViewControllerWithIdentifier:@"PreparePhotoVCId"];
+    self.preparePhotoVC.photo = info[UIImagePickerControllerOriginalImage];
+    self.preparePhotoVC.tabBarController = self.tabBarController;
+    self.preparePhotoVC.delegate = self;
+    [self presentViewController:self.preparePhotoVC animated:YES completion:nil];
     
-    
+
+
+//    self.view.hidden = NO;
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self.tabBarController setSelectedIndex:0];
+
 }
 
--(BOOL)textViewShouldBeginEditing:(UITextView *)textView
+-(void)preparePhotoViewControllerShouldDismiss
 {
-    textView.text = @"";
-    textView.textColor = [UIColor blackColor];
-    return YES;
+    [self dismissViewControllerAnimated:NO completion:nil];
+    [self.tabBarController setSelectedIndex:0];
 }
-
--(BOOL)textViewShouldEndEditing:(UITextView *)textView
-{
-    if (textView.text.length) {
-        
-        Comment *comment = [Comment object];
-        comment.commentText = textView.text;
-        comment.photo = self.pickedPhoto;
-        comment.poster = (User *)[PFUser currentUser];
-        [comment saveInBackground];
-        [comment saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            [self.pickedPhoto.comments addObject:comment];
-            [self.pickedPhoto saveInBackground];
-        }];
-        
-    }
-    return YES;
-    
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [super touchesBegan:touches withEvent:event];
-    
-    [self.commentTextView resignFirstResponder];
-}
-
-
-
 
 
 @end

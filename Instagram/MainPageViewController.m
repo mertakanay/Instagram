@@ -25,7 +25,6 @@
     [super viewDidLoad];
     self.ImageObject = [Image new];
     
-    
     //set the gesture recognizer
     [self setRequiredTappedGestureRecognizers];
     

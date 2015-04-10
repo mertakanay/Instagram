@@ -25,6 +25,7 @@
     [super viewDidLoad];
 
     self.view.userInteractionEnabled = YES;
+    
 
 
 }
