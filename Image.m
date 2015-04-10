@@ -16,6 +16,7 @@
 @dynamic commentsArray;
 @dynamic likersArray;
 @dynamic postUser;
+@dynamic likesCounter;
 
 @synthesize likers = _likers;
 @synthesize comments = _comments;

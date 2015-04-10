@@ -89,7 +89,20 @@
         PFFile *imageFile = self.currentUser.profileImage;
         user[@"profileImage"] = imageFile;
 
+        //Indicator starts annimating when signing up. 
+        UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        activityIndicator.color = [UIColor blueColor];
+        activityIndicator.center = CGPointMake(self.view.frame.size.width / 2.0, self.view.frame.size.height / 2.0);
+        [self.view addSubview: activityIndicator];
+
+        [activityIndicator startAnimating];
+
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+
+
+            //stop actiivity indication from annimating. 
+            [activityIndicator stopAnimating];
+
 
             //if call is succcessful - let the user use the app and take them to next screen.
             if (!error)
@@ -164,8 +177,10 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    FollowRecViewController *followRVC = [segue destinationViewController];
-    followRVC.currentUser = self.currentUser;
+    UINavigationController *followNavVC = [segue destinationViewController];
+    FollowRecViewController *followVC = followNavVC.childViewControllers.firstObject;
+    
+    followVC.currentUser = self.currentUser;
     
 }
 
