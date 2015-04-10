@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "CustomTableViewCell.h"
 #import "Image.h"
+#import "DetailPictureViewController.h"
 
 @interface MainPageViewController ()<UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
@@ -29,7 +30,7 @@
     [self setRequiredTappedGestureRecognizers];
     
     //add gesture recognizer to the view.
-    [self.view addGestureRecognizer:self.tapGestureRecognizer];
+//    [self.view addGestureRecognizer:self.tapGestureRecognizer];
 
 
 
@@ -189,6 +190,15 @@
 
 
     
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"MainToDetailSegue"]) {
+        DetailPictureViewController *detailVC = segue.destinationViewController;
+        
+        detailVC.photo = self.imagesObjectsArray[[self.tableView indexPathForSelectedRow].row];
+    }
 }
 
 

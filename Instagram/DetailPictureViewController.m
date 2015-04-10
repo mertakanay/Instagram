@@ -26,12 +26,55 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    PFQuery *query = [Image query];
-    [query includeKey:@"comments"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    
+    PFRelation *relation = self.photo.comments;
+    PFQuery *commentQuery = [relation query];
+    [commentQuery includeKey:@"poster"];
+    [commentQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         self.comments = objects;
         [self.commentsTableView reloadData];
     }];
+    
+    
+    PFQuery *query = [User query];
+    [query whereKey:@"username" equalTo:self.photo.username];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        
+        
+        if (!error) {
+            
+            NSLog(@"%@",((User *)object).username);
+            PFFile *someFile = ((User *)object).profileImage;
+            
+            [someFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                
+                UIImage *profileImage = [UIImage imageWithData:data];
+                self.userImageView.image = profileImage;
+                self.userImageView.layer.cornerRadius = self.userImageView.frame.size.height / 2;
+                self.userImageView.layer.masksToBounds = YES;
+                self.userImageView.layer.borderWidth = 2.0;
+            }];
+            
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
+    
+    [self.photo.imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        
+        if (!error){
+            
+            self.photoImageView.image = [UIImage imageWithData:data];
+            self.photoImageView.clipsToBounds = true;
+            
+        }
+    }];
+    
+    self.userNameLabel.text = self.photo.username;
+//    self.photoImageView.image = self.photoImage;
+//    self.userImageView.image = self.userProfileImage;
     
 }
 
@@ -44,8 +87,14 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CommentCell"];
     Comment *comment = self.comments[indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ : %@", comment.poster.username,
-                           comment.commentText];
+
+    cell.textLabel.text = comment.poster.username;
+    UIFont *myFont = [ UIFont fontWithName: @"Arial" size: 18.0 ];
+    cell.textLabel.font  = myFont;
+    
+    cell.detailTextLabel.text = comment.commentText;
+    cell.detailTextLabel.font = myFont;
+
     return cell;
 }
 

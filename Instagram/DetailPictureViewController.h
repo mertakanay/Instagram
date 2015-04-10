@@ -12,5 +12,7 @@
 @interface DetailPictureViewController : UIViewController
 
 @property (nonatomic) Image *photo;
+@property (nonatomic) UIImage *photoImage;
+@property (nonatomic) UIImage *userProfileImage;
 
 @end
