@@ -316,10 +316,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ijD-mM-nNl">
-                                                    <rect key="frame" x="8" y="8" width="66" height="66"/>
+                                                    <rect key="frame" x="8" y="31" width="40" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="66" id="TB2-5Y-4UM"/>
-                                                        <constraint firstAttribute="width" constant="66" id="yGt-bg-r7l"/>
+                                                        <constraint firstAttribute="height" constant="40" id="TB2-5Y-4UM"/>
+                                                        <constraint firstAttribute="width" constant="40" id="yGt-bg-r7l"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BoA-JL-Ywe">
@@ -328,19 +328,19 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="377" id="Sj0-ag-wme"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="dKa-7C-Amr" appends="YES" id="aJc-ja-bXM"/>
+                                                    </connections>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Image text" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyd-vw-r3d">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Image text" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyd-vw-r3d" customClass="CustomTextView">
                                                     <rect key="frame" x="0.0" y="457" width="410" height="143"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <gestureRecognizers/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="ukj-vG-4S3" appends="YES" id="1Ev-en-mZz"/>
-                                                    </connections>
                                                 </textView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ai5-oa-lkj">
-                                                    <rect key="frame" x="84" y="33" width="322" height="20.5"/>
+                                                    <rect key="frame" x="62" y="40" width="322" height="20.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="322" id="Ypf-8m-DOg"/>
                                                         <constraint firstAttribute="height" constant="20.5" id="gDz-qU-0wl"/>
@@ -349,23 +349,33 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="GTW-c7-ZlG">
+                                                    <rect key="frame" x="163" y="229" width="75" height="75"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="75" id="VXc-Ll-Wge"/>
+                                                        <constraint firstAttribute="height" constant="75" id="cfR-1b-Ag4"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ai5-oa-lkj" firstAttribute="top" secondItem="5et-cg-q2X" secondAttribute="topMargin" constant="25" id="8h7-3o-Qfs"/>
+                                                <constraint firstAttribute="centerY" secondItem="GTW-c7-ZlG" secondAttribute="centerY" constant="44" id="6mP-38-DQP"/>
+                                                <constraint firstItem="ai5-oa-lkj" firstAttribute="top" secondItem="5et-cg-q2X" secondAttribute="topMargin" constant="32" id="8h7-3o-Qfs"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="dyd-vw-r3d" secondAttribute="bottom" constant="14" id="CmV-YI-htV"/>
-                                                <constraint firstItem="ai5-oa-lkj" firstAttribute="leading" secondItem="ijD-mM-nNl" secondAttribute="trailing" constant="10" id="F0e-7T-M1B"/>
-                                                <constraint firstItem="ijD-mM-nNl" firstAttribute="top" secondItem="5et-cg-q2X" secondAttribute="topMargin" id="QUH-VT-qXc"/>
+                                                <constraint firstItem="ai5-oa-lkj" firstAttribute="leading" secondItem="ijD-mM-nNl" secondAttribute="trailing" constant="14" id="F0e-7T-M1B"/>
+                                                <constraint firstAttribute="centerX" secondItem="GTW-c7-ZlG" secondAttribute="centerX" constant="6.5" id="Nl0-W1-Nbl"/>
+                                                <constraint firstItem="ijD-mM-nNl" firstAttribute="top" secondItem="5et-cg-q2X" secondAttribute="topMargin" constant="23" id="QUH-VT-qXc"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="BoA-JL-Ywe" secondAttribute="trailing" constant="-8" id="Qk5-hX-Wrj"/>
                                                 <constraint firstItem="dyd-vw-r3d" firstAttribute="leading" secondItem="5et-cg-q2X" secondAttribute="leadingMargin" constant="-8" id="cvl-gO-aLx"/>
                                                 <constraint firstItem="dyd-vw-r3d" firstAttribute="top" secondItem="BoA-JL-Ywe" secondAttribute="bottom" constant="1" id="hxz-TI-My6"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="dyd-vw-r3d" secondAttribute="trailing" constant="-4" id="hyk-aE-sNp"/>
                                                 <constraint firstItem="ijD-mM-nNl" firstAttribute="leading" secondItem="5et-cg-q2X" secondAttribute="leadingMargin" id="mhg-VW-y7A"/>
-                                                <constraint firstItem="BoA-JL-Ywe" firstAttribute="top" secondItem="ijD-mM-nNl" secondAttribute="bottom" constant="5" id="npT-Yr-EJb"/>
+                                                <constraint firstItem="BoA-JL-Ywe" firstAttribute="top" secondItem="ijD-mM-nNl" secondAttribute="bottom" constant="8" id="npT-Yr-EJb"/>
                                                 <constraint firstItem="BoA-JL-Ywe" firstAttribute="leading" secondItem="5et-cg-q2X" secondAttribute="leadingMargin" constant="-8" id="xPw-OC-9Ch"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="feedImage" destination="BoA-JL-Ywe" id="15c-3x-MLn"/>
+                                            <outlet property="heartImage" destination="GTW-c7-ZlG" id="FsX-eO-nUI"/>
                                             <outlet property="imageInfoText" destination="dyd-vw-r3d" id="HhJ-fH-yYT"/>
                                             <outlet property="imageOwnerProfilePicture" destination="ijD-mM-nNl" id="3bt-yF-oIq"/>
                                             <outlet property="imageOwnerUsername" destination="ai5-oa-lkj" id="AJb-sA-4aQ"/>
@@ -398,14 +408,13 @@
                     <connections>
                         <outlet property="logOutButton" destination="yat-UO-7Ko" id="Z2F-fb-BnK"/>
                         <outlet property="tableView" destination="bkq-t1-5ti" id="8WC-6U-CbV"/>
-                        <outlet property="tapGestureRecognizer" destination="ukj-vG-4S3" id="xjm-ag-wlS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nLi-eH-EA4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Eb0-bd-fJ0" userLabel="Exit" sceneMemberID="exit"/>
-                <tapGestureRecognizer id="ukj-vG-4S3"/>
+                <tapGestureRecognizer id="dKa-7C-Amr"/>
             </objects>
-            <point key="canvasLocation" x="3380" y="-1000"/>
+            <point key="canvasLocation" x="3396" y="-891"/>
         </scene>
         <!--Detail Picture View Controller-->
         <scene sceneID="ff5-Hf-scv">
@@ -943,6 +952,7 @@
     </scenes>
     <resources>
         <image name="defaultimage" width="1200" height="1200"/>
+        <image name="heart" width="299" height="267"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="KcZ-lE-HL1"/>
