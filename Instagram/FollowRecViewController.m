@@ -9,6 +9,7 @@
 #import "FollowRecViewController.h"
 #import "FollowRecCell.h"
 #import "ProfileViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface FollowRecViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -45,16 +46,25 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FollowRecCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
-    cell.textLabel.text = [[self.recommendationArray objectAtIndex:indexPath.row]username];
+
+    cell.followButton.layer.borderWidth=1.0f;
+    cell.followButton.layer.borderColor=[[UIColor blackColor] CGColor];
+
+    cell.followRecUsernameLabel.text = [[self.recommendationArray objectAtIndex:indexPath.row]username];
 
 //CODE FOR CELLS TO SHOW IMAGE
 
-//    [[[self.recommendationArray objectAtIndex:indexPath.row]profileImage] getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-//        if (!error) {
-//            UIImage *image = [UIImage imageWithData:data];
-//            cell.imageView.image = image;
-//        }
-//    }];
+    [[[self.recommendationArray objectAtIndex:indexPath.row]profileImage] getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:data];
+            cell.followRecImageView.image = image;
+            cell.followRecImageView.layer.cornerRadius = cell.followRecImageView.frame.size.height / 2;
+            cell.followRecImageView.layer.masksToBounds = YES;
+            cell.followRecImageView.layer.borderWidth = 1.5;
+            cell.followRecImageView.clipsToBounds = YES;
+            [cell layoutSubviews];
+        }
+    }];
 
     cell.followButton.tag = indexPath.row;
     [cell.followButton addTarget:self action:@selector(followButtonPressed:) forControlEvents:UIControlEventTouchUpInside];

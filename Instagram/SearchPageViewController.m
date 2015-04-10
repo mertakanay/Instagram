@@ -9,6 +9,7 @@
 #import "SearchPageViewController.h"
 #import "User.h"
 #import "SearchTableCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface SearchPageViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -49,6 +50,9 @@
 {
     SearchTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIDS"];
 
+    cell.followButton.layer.borderWidth=1.0f;
+    cell.followButton.layer.borderColor=[[UIColor blackColor] CGColor];
+
     cell.followButton.tag = indexPath.row;
 
     User *aSelectedUser = [self.usersArray objectAtIndex:indexPath.row];
@@ -64,17 +68,21 @@
 
     }
 
-    cell.textLabel.text = [[self.usersArray objectAtIndex:indexPath.row]username];
+    cell.searchUserNameLabel.text = [[self.usersArray objectAtIndex:indexPath.row]username];
 
-    //CODE FOR CELLS TO SHOW IMAGE
+//    CODE FOR CELLS TO SHOW IMAGE
 
-    //    [[[self.recommendationArray objectAtIndex:indexPath.row]profileImage] getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-    //        if (!error) {
-    //            UIImage *image = [UIImage imageWithData:data];
-    //            cell.imageView.image = image;
-    //        }
-    //    }];
-
+        [[[self.usersArray objectAtIndex:indexPath.row]profileImage] getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (!error) {
+                UIImage *image = [UIImage imageWithData:data];
+                cell.searchImageView.image = image;
+                cell.searchImageView.layer.cornerRadius = cell.searchImageView.frame.size.height / 2;
+                cell.searchImageView.layer.masksToBounds = YES;
+                cell.searchImageView.layer.borderWidth = 1.5;
+                cell.searchImageView.clipsToBounds = YES;
+                [cell layoutSubviews];
+            }
+        }];
 
     [cell.followButton addTarget:self action:@selector(followButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -106,6 +114,7 @@
     if (![self areWeFollowingUser:selectedUser])
     {
         [[User currentUser].followings addObject:selectedUser];
+         [[User currentUser] saveInBackground];
         [self.followingArray addObject:selectedUser];
         //        [self.currentUser.followingArray addObject:selectedUser];
         [sender setTitle:@"Unfollow" forState:UIControlStateNormal];
@@ -114,10 +123,12 @@
     }else if ([self areWeFollowingUser:selectedUser])
     {
         [[User currentUser].followings removeObject:selectedUser];
+        [[User currentUser] saveInBackground];
         [self.followingArray removeObject:selectedUser];
         //        [self.currentUser.followingArray removeObject:selectedUser];
         [sender setTitle:@"Follow" forState:UIControlStateNormal];
         sender.tintColor = [UIColor blueColor];
+
         
     }
     

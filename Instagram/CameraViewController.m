@@ -122,6 +122,7 @@
     PFFile *imageFile = [PFFile fileWithName:@"Picked photo" data:imageData];
     self.pickedPhoto = [Image object];
     self.pickedPhoto.imageFile = imageFile;
+    self.pickedPhoto.username = [User currentUser].username;
     [self.pickedPhoto saveInBackground];
     
     
