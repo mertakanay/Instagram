@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "CustomTableViewCell.h"
 #import "Image.h"
+#import "DetailPictureViewController.h"
 
 @interface MainPageViewController ()<UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, UITextViewDelegate>
 
@@ -19,6 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *logOutButton;
 @property BOOL hasLiked;
+@property NSIndexPath *someIndexPath;
 @end
 
 @implementation MainPageViewController
@@ -47,8 +49,11 @@
             [listOfUser addObject:user.username];
 
         }
+        [listOfUser addObject:currentUser.username];
+        
         PFQuery *query = [Image query];
         [query whereKey:@"username" containedIn:listOfUser];
+        [query orderByDescending:@"createdAt"];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
                 // The find succeeded.
@@ -133,15 +138,9 @@
     }
 
 
-
-
-
-
-
-
-
-
 }
+
+
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
     return YES;
@@ -152,6 +151,7 @@
 
 -(CustomTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
+    self.someIndexPath = indexPath;
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
     // cell.imageInfoText.text = @"Hi";
 
@@ -162,6 +162,12 @@
     //get the number of likes
 
     NSNumber *numberOfLikes = self.imageObject.likesCounter;
+
+    if (numberOfLikes == nil) {
+        self.imageObject.likesCounter = 0;
+        numberOfLikes = 0;
+
+    }
 
     //image text formatting
     cell.imageInfoText.text = [NSString stringWithFormat:@"%@ Likes \n%@ %@", numberOfLikes, self.imageObject.username, self.imageObject.imageDescription];
@@ -183,7 +189,8 @@
 
     cell.imageInfoText.attributedText = attributedText;
 
-
+    cell.imageInfoText.tag = indexPath.row;
+    NSLog(@"\n\n row = %li", (long)indexPath.row);
 
 
 
@@ -207,7 +214,6 @@
                 cell.imageOwnerProfilePicture.layer.cornerRadius = cell.imageOwnerProfilePicture.frame.size.height / 2;
                 cell.imageOwnerProfilePicture.layer.masksToBounds = YES;
                 cell.imageOwnerProfilePicture.layer.borderWidth = 2.0;
-
 
             }];
 
@@ -233,7 +239,6 @@
             cell.feedImage.image = cellImage;
             //cell.imageOwnerProfilePicture =
             cell.feedImage.clipsToBounds = true;
-
         }
     }];
 
@@ -255,6 +260,11 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+
+
+}
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -268,5 +278,18 @@
 }
 
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+
+    DetailPictureViewController *detailVC = segue.destinationViewController;
+    NSLog(@"\n\n\nshit  %li",((UIGestureRecognizer *)sender).view.tag);
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:((UIGestureRecognizer *)sender).view.tag inSection:0];
+    CustomTableViewCell *cell = (CustomTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+
+    detailVC.photo = self.imagesObjectsArray[self.someIndexPath.row];
+
+    //detailVC.photoImage = cell.feedImage.image;
+    //self.imagesObjectsArray[((UIGestureRecognizer *)sender).view.tag];
+}
 
 @end

@@ -47,8 +47,11 @@
 {
     FollowRecCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
 
+    cell.backgroundColor = [UIColor colorWithRed:194/255.0 green:223/255.0 blue:255/255.0 alpha:1.0];
+
     cell.followButton.layer.borderWidth=1.0f;
     cell.followButton.layer.borderColor=[[UIColor blackColor] CGColor];
+    cell.followButton.backgroundColor = [UIColor colorWithRed:250/255.0 green:178/255.0 blue:130/255.0 alpha:1.0];
 
     cell.followRecUsernameLabel.text = [[self.recommendationArray objectAtIndex:indexPath.row]username];
 

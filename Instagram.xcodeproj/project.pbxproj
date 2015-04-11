@@ -35,7 +35,6 @@
 		3E47B6B91AD367F00056D308 /* FollowRecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6B81AD367F00056D308 /* FollowRecViewController.m */; };
 		3E47B6BC1AD373CE0056D308 /* MainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6BB1AD373CE0056D308 /* MainPageViewController.m */; };
 		3E47B6BF1AD37D290056D308 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6BE1AD37D290056D308 /* ProfileViewController.m */; };
-		3E47B6C21AD381B00056D308 /* DetailPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6C11AD381B00056D308 /* DetailPictureViewController.m */; };
 		3E47B6C51AD382490056D308 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47B6C41AD382490056D308 /* EditProfileViewController.m */; };
 		3EBABC8F1AD6375300055D70 /* SearchPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBABC8E1AD6375300055D70 /* SearchPageViewController.m */; };
 		3EBABC921AD63CA500055D70 /* SearchTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBABC911AD63CA500055D70 /* SearchTableCell.m */; };
@@ -45,7 +44,6 @@
 		F2356B8C1AD3C5F7003E6684 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = F2356B8B1AD3C5F7003E6684 /* Image.m */; };
 		F2356B8F1AD3C624003E6684 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = F2356B8E1AD3C624003E6684 /* Comment.m */; };
 		F2356B911AD4434E003E6684 /* defaultimage.png in Resources */ = {isa = PBXBuildFile; fileRef = F2356B901AD4434E003E6684 /* defaultimage.png */; };
-		F24B34EF1AD73772006153EC /* CustomTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F24B34EE1AD73772006153EC /* CustomTextView.m */; };
 		F24B34F11AD7418C006153EC /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = F24B34F01AD7418C006153EC /* heart.png */; };
 		F24B34F31AD76A5C006153EC /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = F24B34F21AD76A5C006153EC /* home.png */; };
 		F24B34F91AD76EAA006153EC /* cameraicon.png in Resources */ = {isa = PBXBuildFile; fileRef = F24B34F81AD76EAA006153EC /* cameraicon.png */; };
@@ -57,6 +55,9 @@
 		F24B350A1AD839A5006153EC /* x120igicon.png in Resources */ = {isa = PBXBuildFile; fileRef = F24B35081AD839A5006153EC /* x120igicon.png */; };
 		F24B350B1AD839A5006153EC /* x180igicon.png in Resources */ = {isa = PBXBuildFile; fileRef = F24B35091AD839A5006153EC /* x180igicon.png */; };
 		F24B350D1AD83A85006153EC /* Instagram_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F24B350C1AD83A85006153EC /* Instagram_logo.jpg */; };
+		F24B350F1AD85881006153EC /* instagramLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F24B350E1AD85881006153EC /* instagramLogo.png */; };
+		F24B35111AD86691006153EC /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = F24B35101AD86691006153EC /* camera.png */; };
+		F24B35141AD86C7C006153EC /* DetailPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F24B35131AD86C7C006153EC /* DetailPictureViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,8 +112,6 @@
 		3E47B6BB1AD373CE0056D308 /* MainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageViewController.m; sourceTree = "<group>"; };
 		3E47B6BD1AD37D290056D308 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		3E47B6BE1AD37D290056D308 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
-		3E47B6C01AD381B00056D308 /* DetailPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPictureViewController.h; sourceTree = "<group>"; };
-		3E47B6C11AD381B00056D308 /* DetailPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPictureViewController.m; sourceTree = "<group>"; };
 		3E47B6C31AD382490056D308 /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
 		3E47B6C41AD382490056D308 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 		3EBABC8D1AD6375300055D70 /* SearchPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchPageViewController.h; sourceTree = "<group>"; };
@@ -143,6 +142,10 @@
 		F24B35081AD839A5006153EC /* x120igicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x120igicon.png; sourceTree = "<group>"; };
 		F24B35091AD839A5006153EC /* x180igicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x180igicon.png; sourceTree = "<group>"; };
 		F24B350C1AD83A85006153EC /* Instagram_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Instagram_logo.jpg; sourceTree = "<group>"; };
+		F24B350E1AD85881006153EC /* instagramLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = instagramLogo.png; sourceTree = "<group>"; };
+		F24B35101AD86691006153EC /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		F24B35121AD86C7C006153EC /* DetailPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailPictureViewController.h; path = ../DetailPictureViewController.h; sourceTree = "<group>"; };
+		F24B35131AD86C7C006153EC /* DetailPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailPictureViewController.m; path = ../DetailPictureViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +208,8 @@
 				3E47B67B1AD35A450056D308 /* SignInViewController.m */,
 				3648AB2A1AD4436800CB861B /* CameraViewController.h */,
 				3648AB2B1AD4436800CB861B /* CameraViewController.m */,
+				F24B35121AD86C7C006153EC /* DetailPictureViewController.h */,
+				F24B35131AD86C7C006153EC /* DetailPictureViewController.m */,
 				3E47B6B41AD367B80056D308 /* SignUpViewController.h */,
 				3E47B6B51AD367B80056D308 /* SignUpViewController.m */,
 				3E47B6B71AD367F00056D308 /* FollowRecViewController.h */,
@@ -219,8 +224,6 @@
 				3EF090281AD73D8000791C57 /* ProfileCollectionViewCell.m */,
 				3E47B6C31AD382490056D308 /* EditProfileViewController.h */,
 				3E47B6C41AD382490056D308 /* EditProfileViewController.m */,
-				3E47B6C01AD381B00056D308 /* DetailPictureViewController.h */,
-				3E47B6C11AD381B00056D308 /* DetailPictureViewController.m */,
 				3E47B6821AD35A450056D308 /* LaunchScreen.xib */,
 				F218B99E1AD507CC0000E679 /* CustomTableViewCell.h */,
 				F218B99F1AD507CC0000E679 /* CustomTableViewCell.m */,
@@ -234,6 +237,8 @@
 				3E257E761AD58763007E7186 /* TabBarViewController.h */,
 				3E257E771AD58763007E7186 /* TabBarViewController.m */,
 				3E47B6801AD35A450056D308 /* Images.xcassets */,
+				F24B35101AD86691006153EC /* camera.png */,
+				F24B350E1AD85881006153EC /* instagramLogo.png */,
 				F24B350C1AD83A85006153EC /* Instagram_logo.jpg */,
 				F24B35081AD839A5006153EC /* x120igicon.png */,
 				F24B35091AD839A5006153EC /* x180igicon.png */,
@@ -393,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F24B350A1AD839A5006153EC /* x120igicon.png in Resources */,
+				F24B35111AD86691006153EC /* camera.png in Resources */,
 				3E47B67F1AD35A450056D308 /* Main.storyboard in Resources */,
 				F24B350D1AD83A85006153EC /* Instagram_logo.jpg in Resources */,
 				F24B35071AD83629006153EC /* instagram_launchScreen.png in Resources */,
@@ -403,6 +409,7 @@
 				F24B34F11AD7418C006153EC /* heart.png in Resources */,
 				F24B35011AD7752C006153EC /* profileimage.png in Resources */,
 				F24B350B1AD839A5006153EC /* x180igicon.png in Resources */,
+				F24B350F1AD85881006153EC /* instagramLogo.png in Resources */,
 				3E47B6811AD35A450056D308 /* Images.xcassets in Resources */,
 				F2356B911AD4434E003E6684 /* defaultimage.png in Resources */,
 				F24B34FD1AD7736B006153EC /* heartz.png in Resources */,
@@ -424,13 +431,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E47B6C21AD381B00056D308 /* DetailPictureViewController.m in Sources */,
 				3EBABC8F1AD6375300055D70 /* SearchPageViewController.m in Sources */,
 				3E257E751AD4F4E9007E7186 /* FollowRecCell.m in Sources */,
 				3E47B6761AD35A450056D308 /* AppDelegate.m in Sources */,
 				3E47B6C51AD382490056D308 /* EditProfileViewController.m in Sources */,
 				3E47B6B61AD367B80056D308 /* SignUpViewController.m in Sources */,
 				3E47B6BF1AD37D290056D308 /* ProfileViewController.m in Sources */,
+				F24B35141AD86C7C006153EC /* DetailPictureViewController.m in Sources */,
 				3648AB2C1AD4436800CB861B /* CameraViewController.m in Sources */,
 				3E47B6791AD35A450056D308 /* Instagram.xcdatamodeld in Sources */,
 				F2356B891AD3C5C7003E6684 /* User.m in Sources */,

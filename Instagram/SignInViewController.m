@@ -14,7 +14,9 @@
 @interface SignInViewController ()<UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *signinButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 
 @end
 
@@ -25,6 +27,13 @@
     [super viewDidLoad];
 
     self.view.userInteractionEnabled = YES;
+
+    self.signinButton.layer.borderWidth=1.0f;
+    self.signinButton.layer.borderColor=[[UIColor blackColor] CGColor];
+
+
+    self.signUpButton.layer.borderWidth=1.0f;
+    self.signUpButton.layer.borderColor=[[UIColor blackColor] CGColor];
 
 
 }
@@ -60,7 +69,7 @@
     }else{
 
         UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-        activityIndicator.color = [UIColor blueColor];
+        activityIndicator.color = [UIColor colorWithRed:194/255.0 green:223/255.0 blue:255/255.0 alpha:1.0];
         activityIndicator.center = CGPointMake(self.view.frame.size.width / 2.0, self.view.frame.size.height / 2.0);
         [self.view addSubview: activityIndicator];
 

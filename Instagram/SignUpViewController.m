@@ -19,7 +19,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageVC;
 
+@property (weak, nonatomic) IBOutlet UIButton *chooseImageButton;
 @property User *currentUser;
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 @end
 
@@ -31,6 +34,18 @@
     self.view.userInteractionEnabled = YES;
 
     self.currentUser = [User object];
+
+
+    self.view.backgroundColor =[UIColor colorWithRed:194/255.0 green:223/255.0 blue:255/255.0 alpha:1.0];
+
+    self.chooseImageButton.tintColor = [UIColor colorWithRed:250/255.0 green:178/255.0 blue:130/255.0 alpha:1.0];
+
+    self.registerButton.layer.borderWidth=1.5f;
+    self.registerButton.layer.borderColor=[[UIColor blackColor] CGColor];
+    self.registerButton.backgroundColor = [UIColor colorWithRed:250/255.0 green:178/255.0 blue:130/255.0 alpha:1.0];
+    self.cancelButton.layer.borderWidth=1.5f;
+    self.cancelButton.layer.borderColor=[[UIColor blackColor] CGColor];
+    self.cancelButton.backgroundColor = [UIColor colorWithRed:250/255.0 green:178/255.0 blue:130/255.0 alpha:1.0];
 
 }
 
@@ -70,7 +85,7 @@
 
         signUpError = @"Passwords do not match, please try again.";
 
-    }else if ([self.passwordTextField.text length] < 1 || [self.confirmPasswordTextField.text length] < 1){
+    }else if ([self.passwordTextField.text length] < 6 || [self.confirmPasswordTextField.text length] < 6){
 
         signUpError = @"Password must be at least 8 characters long. Please try again.";
 
