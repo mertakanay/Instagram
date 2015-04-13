@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vHQ-aA-Ed7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vHQ-aA-Ed7">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="fuckparse" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nk8-Oh-NcU">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="helloparse" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nk8-Oh-NcU">
                                 <rect key="frame" x="76" y="310" width="262" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="cKC-UN-r1T"/>
@@ -310,7 +310,7 @@
                                     <constraint firstAttribute="width" constant="414" id="8eH-h6-qqO"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" rowHeight="622" id="NdA-Ri-8YD" customClass="CustomTableViewCell">
+                                    <tableViewCell multipleTouchEnabled="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" rowHeight="622" id="NdA-Ri-8YD" customClass="CustomTableViewCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NdA-Ri-8YD" id="5et-cg-q2X">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -328,19 +328,16 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="377" id="Sj0-ag-wme"/>
                                                     </constraints>
-                                                    <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="lCE-rF-AKX" appends="YES" id="7cs-P7-5zn"/>
-                                                    </connections>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Image text" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyd-vw-r3d">
-                                                    <rect key="frame" x="0.0" y="457" width="410" height="143"/>
+                                                <textView clipsSubviews="YES" contentMode="scaleToFill" editable="NO" text="Image text" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyd-vw-r3d">
+                                                    <rect key="frame" x="0.0" y="457" width="410" height="142"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <gestureRecognizers/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ai5-oa-lkj">
-                                                    <rect key="frame" x="84" y="33" width="322" height="20.5"/>
+                                                    <rect key="frame" x="84" y="33" width="322" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="322" id="Ypf-8m-DOg"/>
                                                         <constraint firstAttribute="height" constant="20.5" id="gDz-qU-0wl"/>
@@ -398,17 +395,13 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="tableView" destination="bkq-t1-5ti" id="8WC-6U-CbV"/>
+                        <segue destination="Ma9-11-Ooe" kind="show" identifier="MainToDetailSegue" id="5R5-lg-cXW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nLi-eH-EA4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Eb0-bd-fJ0" userLabel="Exit" sceneMemberID="exit"/>
-                <tapGestureRecognizer id="lCE-rF-AKX">
-                    <connections>
-                        <segue destination="Ma9-11-Ooe" kind="show" identifier="MainToDetailSegue" id="gbU-zx-LvJ"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2754" y="-1000"/>
+            <point key="canvasLocation" x="2886" y="-934"/>
         </scene>
         <!--Detail Picture View Controller-->
         <scene sceneID="ff5-Hf-scv">
@@ -524,7 +517,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UsG-Ck-xPC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3352" y="-605"/>
+            <point key="canvasLocation" x="3409" y="-619"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3wK-oZ-6uQ">
@@ -963,7 +956,7 @@
         <image name="defaultimage" width="1200" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Nos-6f-NMB"/>
-        <segue reference="gbU-zx-LvJ"/>
+        <segue reference="KcZ-lE-HL1"/>
+        <segue reference="5R5-lg-cXW"/>
     </inferredMetricsTieBreakers>
 </document>

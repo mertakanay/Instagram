@@ -15,8 +15,9 @@
 @interface MainPageViewController ()<UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property NSMutableArray *imagesObjectsArray;
+@property NSArray *imagesObjectsArray;
 @property (strong, nonatomic) Image *imageObject;
+@property (nonatomic) UITapGestureRecognizer *tapGestureOnPhoto;
 
 @end
 
@@ -31,13 +32,15 @@
     
     //add gesture recognizer to the view.
 //    [self.view addGestureRecognizer:self.tapGestureRecognizer];
-
+//    self.tapGestureOnPhoto = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTapOnTextView:)];
+//    self.tapGestureOnPhoto.numberOfTapsRequired = 1;
+//
 
 
 
 }
 -(void)viewWillAppear:(BOOL)animated{
-    self.imagesObjectsArray = [NSMutableArray new];
+    self.imagesObjectsArray = [NSArray new];
     NSMutableArray *listOfUser = [NSMutableArray new];
     
     User *currentUser = [User currentUser];
@@ -56,14 +59,8 @@
             if (!error) {
                 // The find succeeded.
                 NSLog(@"Successfully retrieved %lu images.", (unsigned long)objects.count);
-                
                 self.imagesObjectsArray = objects;
-                
-                
-                
                 [self.tableView reloadData];
-                
-                
             } else {
                 // Log details of the failure
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -72,6 +69,7 @@
 
     }];
     
+
 
 
 
@@ -104,12 +102,29 @@
 
 
 -(CustomTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    NSInteger index0 = indexPath.row;
+    NSLog(@"Test:index0    %li\n",index0);
+    NSLog(@"Test:    %@\n",((Image *)self.imagesObjectsArray[index0]).username);
 
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
    // cell.imageInfoText.text = @"Hi";
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
+    cell.imageInfoText.tag = indexPath.row;
+    cell.feedImage.tag = indexPath.row;
+    cell.imageOwnerProfilePicture.tag = indexPath.row;
+    cell.imageOwnerUsername.tag = indexPath.row;
+    
 
+    UITapGestureRecognizer  *tapGestureOnPhoto = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTapOnTextView:)];
+    tapGestureOnPhoto.numberOfTapsRequired = 1;
 
+    cell.imageInfoText.userInteractionEnabled = YES;
+    [cell.imageInfoText addGestureRecognizer:tapGestureOnPhoto];
+    
     self.imageObject = self.imagesObjectsArray[indexPath.row];
     
   
@@ -117,7 +132,7 @@
     cell.imageInfoText.text = [NSString stringWithFormat:@"43 Likes \n%@ %@",self.imageObject.username, self.imageObject.imageDescription];
     NSRange range = [cell.imageInfoText.text rangeOfString:self.imageObject.username];
     NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc]initWithString:cell.imageInfoText.text];
-    [attributedText setAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:17.0f]} range:range];
+    [attributedText setAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:25.0f]} range:range];
     [attributedText addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:range];
     cell.imageInfoText.attributedText = attributedText;
     
@@ -174,16 +189,21 @@
 
         }
     }];
-
-
-
+    
+    NSLog(@"cell %li is ready",indexPath.row);
+    
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    
     return self.imagesObjectsArray.count;
 }
+
+
+
+
 
 - (IBAction)logOutButtonTapped:(UIBarButtonItem *)sender {
     [PFUser logOut];
@@ -192,15 +212,55 @@
     
 }
 
+-(void)handleTapOnTextView:(UITapGestureRecognizer *)sender
+{
+    NSLog(@"tapped photo tag: %li", sender.view.tag);
+//    CGPoint tapLocation = [sender locationInView:sender.view];
+//    CGRect linkPosition = [self frameOfTextRange:result.range inTextView:sender.view];
+    UITextView *textView = (UITextView *)(sender.view);
+    NSUInteger indexOfTappedCharacter = [self indexOfTappedCharacterInTextView:textView withTapGesture:sender];
+    NSRange range = [textView.text rangeOfString:((Image *)self.imagesObjectsArray[textView.tag]).username];
+    if (indexOfTappedCharacter >= range.location &&
+        indexOfTappedCharacter < range.location + range.length) {
+        [self performSegueWithIdentifier:@"MainToDetailSegue" sender:sender];
+    }
+
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"MainToDetailSegue"]) {
         DetailPictureViewController *detailVC = segue.destinationViewController;
+       
+        NSInteger index = ((UIGestureRecognizer *)sender).view.tag;
+        NSLog(@"Test:    %li\n",index);
+        NSLog(@"Test:    %@\n",((Image *)self.imagesObjectsArray[index]).username);
         
-        detailVC.photo = self.imagesObjectsArray[[self.tableView indexPathForSelectedRow].row];
+        detailVC.photo = self.imagesObjectsArray[index];
     }
 }
 
+
+- (CGRect)frameOfTextRange:(NSRange)range inTextView:(UITextView *)textView
+{
+    UITextPosition *beginning = textView.beginningOfDocument;
+    UITextPosition *start = [textView positionFromPosition:beginning offset:range.location];
+    UITextPosition *end = [textView positionFromPosition:start offset:range.length];
+    UITextRange *textRange = [textView textRangeFromPosition:start toPosition:end];
+    CGRect firstRect = [textView firstRectForRange:textRange];
+    CGRect newRect = [textView convertRect:firstRect fromView:textView.textInputView];
+    return newRect;
+}
+
+-(NSUInteger)indexOfTappedCharacterInTextView:(UITextView *)textView withTapGesture:(UITapGestureRecognizer *)tapGesture
+{
+    NSLayoutManager *layoutManager = textView.layoutManager;
+    CGPoint location = [tapGesture locationInView:textView];
+    NSUInteger characterIndex = [layoutManager characterIndexForPoint:location
+                                           inTextContainer:textView.textContainer
+                  fractionOfDistanceBetweenInsertionPoints:NULL];
+    return characterIndex;
+}
 
 
 @end
